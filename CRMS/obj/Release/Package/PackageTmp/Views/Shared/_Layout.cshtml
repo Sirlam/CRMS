@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title | Ecobank CRMS Collection</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/fontAwesome")
+    @Styles.Render("~/Content/datePicker")
+    @Styles.Render("~/Content/jqueryui")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("CRMS100", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("CRMS200", "Second", "Home")</li>
+                    <li>@Html.ActionLink("CRMS300", "Third", "Home")</li>
+                    <li>@Html.ActionLink("CRMS400A", "Fourth", "Home")</li>
+                    <li>@Html.ActionLink("CRMS400B", "Fifth", "Home")</li>
+                    <!--<li class="disabled">@Html.ActionLink("CRMS400C [Exclude]", "Sixth", "Home")</li>-->
+                    <li>@Html.ActionLink("CRMS600", "Seventh", "Home")</li>
+                    <li>@Html.ActionLink("CRMS700", "Eight", "Home")</li>
+                    <li>@Html.ActionLink("My Uploads", "MyUploads", "Home")</li>
+                    <li>@Html.ActionLink("Admin", "Admin", "Home")</li>
+                </ul>
+                @if (Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("Logout", "MyAccount", FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-info btn-sm pull-right">
+                            Logout, @HttpContext.Current.User.Identity.Name
+                        </a>
+                    }
+                }
+                else
+                {
+                    <a href="@Url.Action("Login","MyAccount")" class="btn btn-info btn-sm pull-right">Login</a>
+                }
+            </div>
+        </div>
+    </div>
+     
+    <div class="header">
+        <div class="container">
+            <img src="~/img/Logo.jpg" class="img-responsive pull-left" />
+            <h4 class="pull-right">@ViewBag.Title</h4>
+        </div>
+    </div>   
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; @DateTime.Now.Year - Ecobank Nigeria</p>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/datePicker")
+    @Scripts.Render("~/bundles/datePickerEnglish")
+    @Scripts.Render("~/bundles/formValidator")
+    @Scripts.Render("~/bundles/alphanumeric")
+    @Scripts.Render("~/bundles/additionalMethods")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script>
+        $(function () {
+            $(".jqueryui-datepicker").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeYear: true,
+                changeMonth: true,
+                minDate: 0,
+                showOn: "button"
+            }).attr('readOnly', 'true')
+                .css("display", "inline-block")
+                .next("button").button({
+                    icons: { primary: "glyphicon glyphicon-calendar" },
+                    label: "",
+                    text: false
+                });
+        })
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,2272 @@
+﻿@using CRMS.Utils
+@using WebGrease.Css
+@{
+    ViewBag.Title = "CRMS 700";
+
+    List<CrmsData> LegalStatus = ViewBag.LegalStatus;
+    List<CrmsData> BusinessLines = ViewBag.BusinessLines;
+    List<CrmsData> BusinessLinesSubsector = ViewBag.BusinessLinesSubsector;
+    List<CrmsData> FeeType = ViewBag.FeeType;
+    List<CrmsData> SecurityType = ViewBag.SecurityType;
+    List<CrmsData> LocationOfBeneficiary = ViewBag.LocationOfBeneficiary;
+    List<CrmsData> RelationshipType = ViewBag.RelationshipType;
+    List<CrmsData> CompanySize = ViewBag.CompanySize;
+    List<CrmsData> FundingSource = ViewBag.FundingSource;
+
+    var saveCrms700 = ViewBag.saveCrms700;
+}
+
+@if (saveCrms700 == true)
+{
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Data saved successfully</strong>
+    </div>
+}
+else if (saveCrms700 == false)
+{
+    <div class="alert alert-danger alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Error Saving, Try again later</strong>
+    </div>
+}
+
+<div class="row">
+    <div class="col-sm-7">
+        <h4>PURPOSE</h4>
+        <h4>CRMS 700 - Update of Migrated Records</h4>
+        <p class="text-danger">Note: Data Inputted should be valid and accurate. Kindly Re-confirm before saving.</p>
+        <br />
+    </div>
+</div>
+
+<div class="row">
+    <br />
+    <!--Third CRMS 300 Div-->
+    <div class="isCRMS_700 col-sm-12 general">
+        <h3>Rendition of Borrower Credit Details (Individual & Corporates)</h3>
+        <p><span class="text-danger">*</span> fields are required</p>
+        <br />
+        @using (Html.BeginForm("Eight", "Home", FormMethod.Post, new { @class = "form-horizontal", @id = "formCRMS700" }))
+        {
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Code:</label>
+                    <input type="text" class="form-control" value="CRMS 700" readonly="readonly" name="code" id="code" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Customer ID <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Customer ID" maxlength="8" required="required" name="CustomerID" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Customer Account Number <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Customer Account Number" maxlength="10" required="required" name="AccountNumber" id="AccountNumber" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Customer Name <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Click to fetch account name</span>
+                    <input type="text" class="form-control" placeholder="Enter Customer Name" required="required" readonly="readonly" name="CustomerName" id="CustomerName" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Unique Identification Type <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="UniqueIdentificationType">
+                        <option value="BVN">BVN</option>
+                        <option value="TIN">TIN</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Unique Identification No <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Unique Identification No" maxlength="15" required="required" name="IdentificationNo" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>CRMS Reference No <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Format: xxxxx(bankcode)/yyyymmdd/xxxxx(sequence number)</span>
+                    <input type="text" class="form-control" placeholder="xxxxx(bankcode)/yyyymmdd/xxxxx(sequence number)" maxlength="25" required="required" name="CRMSRefNo" id="CRMSRefNo" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Credit Purpose By Businesslines <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="BusinessLines" id="BusinessLines">
+                        @if (BusinessLines != null)
+                        {
+                            foreach (var businessLines in BusinessLines)
+                            {
+                                <option value="@businessLines.BusinessLinesCode" name="@businessLines.BusinessLinesCode">@businessLines.BusinessLines</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Credit Purpose By Businesslines Sub Sector <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="BusinessLinesSubsector" id="BusinessLinesSubsector">
+                        @if (BusinessLinesSubsector != null)
+                        {
+                            foreach (var businessLinesSubsector in BusinessLinesSubsector)
+                            {
+                                <option value="@businessLinesSubsector.BusinessLinesSubsectorCode" name="@businessLinesSubsector.AssociatedBusinessLine">@businessLinesSubsector.BusinessLinesSubsector</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group general">
+                <label class="text-primary">FEES</label>
+                <div class="col-sm-4">
+                    <label>Fee Type <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="FeeType1">
+                        @if (FeeType != null)
+                        {
+                            foreach (var feeType in FeeType)
+                            {
+                                <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                            }
+                        }
+                    </select>
+                    <button type="button" class='btn btn-success' id='addFeeCRMS700' value="Add Fee">Add more</button>
+                    <button type="button" class='btn btn-danger' id='removeFeeCRMS700' value="Remove Fee">Remove all</button>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Fee Amount (NGN) <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                    <input type="text" placeholder="Enter Fee Amount" class="form-control" maxlength="21" required="required" name="FeeAmount1" id="FeeAmount1" />
+                </div>
+            </div>
+
+            <!--Fees-->
+            <div id="feeCRMS700" class="general">
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType2">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount2" id="FeeAmount2" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType3">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount3" id="FeeAmount3" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType4">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount4" id="FeeAmount4" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType5">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount5" id="FeeAmount5" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType6">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount6" id="FeeAmount6" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType7">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount7" id="FeeAmount7" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType8">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount8" id="FeeAmount8" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType9">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount9" id="FeeAmount9" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType10">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount10" id="FeeAmount10" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType11">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount11" id="FeeAmount11" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType12">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount12" id="FeeAmount12" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType13">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount13" id="FeeAmount13" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType14">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount14" id="FeeAmount14" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType15">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount15" id="FeeAmount15" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType16">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount16" id="FeeAmount16" />
+                    </div>
+                </div>
+            </div>
+            <!--Fees-->
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Tenor <span class="text-danger">*</span> :</label>
+                    <span class="help-block">(in months)</span>
+                    <input type="text" placeholder="Enter Tenor" class="form-control" maxlength="3" required="required" name="Tenor" id="Tenor700" />
+                </div>
+                
+                <div class="col-sm-4">
+                    <label>Beneficiary Account Number <span class="text-danger">*</span> :</label>
+                    <input type="text" placeholder="Enter Beneficiary Account Number" class="form-control" maxlength="10" required="required" name="BenefciaryAccount" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Location of Beneficiary <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="LocationOfBeneficiary">
+                        @if (LocationOfBeneficiary != null)
+                        {
+                            foreach (var locationofBeneficiary in LocationOfBeneficiary)
+                            {
+                                <option value="@locationofBeneficiary.CityCode">@locationofBeneficiary.State - @locationofBeneficiary.CityName</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label>Relationship Type <span class="text-danger">*</span> :</label>
+                    @if (RelationshipType != null)
+                    {
+                        foreach (var relationshipType in RelationshipType)
+                        {
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-inline">
+                                    <label><input type="checkbox" value="@relationshipType.RelationshipCode" id="@relationshipType.RelationshipCode" name="RelationshipType">@relationshipType.RelationshipType</label>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="form-group general">
+                <label class="text-primary">COMPANY SIZE</label>
+                <span class="help-block">Kindly confrim with the below criteria before selecting company size</span>
+                <div class="col-sm-8">
+                    <table class="table table-responsive table-hover">
+                        <tr>
+                            <th>SIZE/CRITERIA</th>
+                            <th>EMPLOYEES (Full Time Only)</th>
+                            <th>TOTAL ASSETS (Excluding Land & Buildings)</th>
+                            <th>ANNUAL TURNOVER</th>
+                        </tr>
+                        <tr>
+                            <td>MICRO</td>
+                            <td>< 10</td>
+                            <td>< N10m</td>
+                            <td>< N20m</td>
+                        </tr>
+                        <tr>
+                            <td>SMALL</td>
+                            <td>10 – 49</td>
+                            <td>N10m – N100m</td>
+                            <td>N20m – N200m</td>
+                        </tr>
+                        <tr>
+                            <td>MEDIUM</td>
+                            <td>50 – 199</td>
+                            <td>N101m – N500m</td>
+                            <td>N201m – N1bn</td>
+                        </tr>
+                        <tr>
+                            <td>LARGE/MULTI-NATIONAL</td>
+                            <td>200 and above</td>
+                            <td>> N500m</td>
+                            <td>> N1bn</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Company Size:</label>
+                    <select class="form-control" name="CompanySize">
+                        @if (CompanySize != null)
+                        {
+                            foreach (var companySize in CompanySize)
+                            {
+                                <option value="@companySize.CompanySizeCode">@companySize.CompanySize</option>
+                            }
+                        }
+                    </select>
+                    <p class="help-block">NOTE: In determining the size of the non-individual borrower, EMPLOYEES and any other criterion shall be met</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Funding Source Category <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="FundingSourceCategory" id="FundingSourceCategory">
+                        <option value="FCY">FCY</option>
+                        <option value="LCY">LCY</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>ECCI Number:</label>
+                    <input type="text" class="form-control" maxlength="20" name="ECCINumber" id="ECCINumber" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label>Funding Source <span class="text-danger">*</span> :</label>
+                    @if (FundingSource != null)
+                    {
+                        foreach (var fundingSource in FundingSource)
+                        {
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-inline">
+                                    <label><input type="checkbox" value="@fundingSource.FundingSourceCode" id="@fundingSource.FundingSourceCode" name="FundingSource">@fundingSource.FundingSource</label>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Legal Status <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="LegalStatus">
+                        @if (LegalStatus != null)
+                        {
+                            foreach (var legalStatus in LegalStatus)
+                            {
+                                <option value="@legalStatus.LegalCode">@legalStatus.LegalStatus</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Classification by Business Lines <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="CBusinessLines" id="CBusinessLines">
+                        @if (BusinessLines != null)
+                        {
+                            foreach (var businessLines in BusinessLines)
+                            {
+                                <option value="@businessLines.BusinessLinesCode" name="@businessLines.BusinessLinesCode">@businessLines.BusinessLines</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Classification by Business Lines Sub Sector <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="CBusinessLinesSubsector" id="CBusinessLinesSubsector">
+                        @if (BusinessLinesSubsector != null)
+                        {
+                            foreach (var businessLinesSubsector in BusinessLinesSubsector)
+                            {
+                                <option value="@businessLinesSubsector.BusinessLinesSubsectorCode" name="@businessLinesSubsector.AssociatedBusinessLine">@businessLinesSubsector.BusinessLinesSubsector</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Specialised Loan <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Does loan have moratorium period?</span>
+                    <select class="form-control" name="SpecialisedLoan" id="SpecialisedLoan">
+                        <option value="YES">YES</option>
+                        <option value="NO">NO</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Specialised Loan Moratorium Period:</label>
+                    <span class="help-block">State moratorium period in months</span>
+                    <input type="text" value="0" class="form-control" maxlength="2" name="SpecialisedLoanPeriod" />
+                </div>
+            </div>
+
+            <div class="form-group general">
+                <label class="text-primary">Director Unique Identifier</label>
+                <div class="col-sm-4">
+                    <label>Director Unique Identification Type:</label>
+                    <select class="form-control" name="DirectorUniqueIdentificationType1" id="DirectorUniqueIdentificationType1">
+                        <option selected="selected" value="">--Select Director Unique Identification Type--</option>
+                        <option value="BVN">BVN</option>
+                        <option value="TIN">TIN</option>
+                    </select>
+                    <button type="button" class='btn btn-success' id='addDirectorCRMS700' value="Add Fee">Add more</button>
+                    <button type="button" class='btn btn-danger' id='removeDirectorCRMS700' value="Remove Fee">Remove all</button>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>DirectorUnique Identification Number:</label>
+                    <input type="text" class="form-control" maxlength="15" placeholder="Enter Unique Identification Number" name="DirectorUniqueIdentificationNumber1" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Director Email Address:</label>
+                    <input type="email" class="form-control" maxlength="200" placeholder="Enter Director Email Address" name="DirectorEmail1" />
+                </div>
+            </div>
+
+            <!--Directors-->
+            <div id="directorCRMS700" class="general">
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Director Unique Identification Type:</label>
+                        <select class="form-control" name="DirectorUniqueIdentificationType2" id="DirectorUniqueIdentificationType2">
+                            <option selected="selected" value="">--Select Director Unique Identification Type--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>DirectorUnique Identification Number:</label>
+                        <input type="text" class="form-control" maxlength="15" placeholder="Enter Unique Identification Number" name="DirectorUniqueIdentificationNumber2" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Director Email Address</label>
+                        <input type="email" class="form-control" maxlength="200" placeholder="Enter Director Email Address" name="DirectorEmail2" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Director Unique Identification Type:</label>
+                        <select class="form-control" name="DirectorUniqueIdentificationType3" id="DirectorUniqueIdentificationType3">
+                            <option selected="selected" value="">--Select Director Unique Identification Type--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>DirectorUnique Identification Number:</label>
+                        <input type="text" class="form-control" maxlength="15" placeholder="Enter Unique Identification Number" name="DirectorUniqueIdentificationNumber3" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Director Email Address</label>
+                        <input type="email" class="form-control" maxlength="200" placeholder="Enter Director Email Address" name="DirectorEmail3" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Director Unique Identification Type:</label>
+                        <select class="form-control" name="DirectorUniqueIdentificationType4" id="DirectorUniqueIdentificationType4">
+                            <option selected="selected" value="">--Select Director Unique Identification Type--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>DirectorUnique Identification Number:</label>
+                        <input type="text" class="form-control" maxlength="15" placeholder="Enter Unique Identification Number" name="DirectorUniqueIdentificationNumber4" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Director Email Address</label>
+                        <input type="email" class="form-control" maxlength="200" placeholder="Enter Director Email Address" name="DirectorEmail4" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Director Unique Identification Type:</label>
+                        <select class="form-control" name="DirectorUniqueIdentificationType5" id="DirectorUniqueIdentificationType5">
+                            <option selected="selected" value="">--Select Director Unique Identification Type--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>DirectorUnique Identification Number:</label>
+                        <input type="text" class="form-control" maxlength="15" placeholder="Enter Unique Identification Number" name="DirectorUniqueIdentificationNumber5" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Director Email Address</label>
+                        <input type="email" class="form-control" maxlength="200" placeholder="Enter Director Email Address" name="DirectorEmail5" />
+                    </div>
+                </div>
+            </div>
+            <!--Directors-->
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Syndication <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="Syndication" id="Syndication">
+                        <option value="YES">YES</option>
+                        <option value="NO">No</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Syndication Status:</label>
+                    <select class="form-control" name="SyndicationStatus">
+                        <option value="LEAD">LEAD</option>
+                        <option value="MEMBER">MEMBER</option>
+                        <option value="NIL">NIL</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Syndication Name:</label>
+                    <textarea class="form-control" placeholder="Enter Syndication Name" name="SyndicationName" id="SyndicationName"></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Syndication Total Amount:</label>
+                    <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                    <input type="text" class="form-control" placeholder="Enter Syndication Total Amount" maxlength="21" value="0" name="SyndicationTotalAmount" id="SyndicationTotalAmount" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Syndication Reference Number:</label>
+                    <input type="text" class="form-control" placeholder="Enter Syndication Refernce Number" name="SyndicationReferenceNumber" />
+                </div>
+            </div>
+
+            <div class="form-group general">
+                <label class="text-primary">COLLATERAL</label>
+                <div class="col-sm-4">
+                    <label>Collateral Present <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="CollateralPresent1">
+                        <option value="YES">YES</option>
+                        <option value="NO">No</option>
+                    </select>
+                    <button type="button" class='btn btn-success' id='addCollateralCRMS700' value="Add Collateral">Add more</button>
+                    <button type="button" class='btn btn-danger' id='removeCollateralCRMS700' value="Remove Collateral">Remove all</button>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Collateral Secure:</label>
+                    <select class="form-control" name="CollateralSecure1" id="CollateralSecure1">
+                        <option value="" selected="selected">--Select Collateral Security--</option>
+                        <option value="YES">YES</option>
+                        <option value="NO">No</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Security Type:</label>
+                    <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                    <select class="form-control" name="SecurityType1">
+                        <option selected="selected" value="">--Select Security Type--</option>
+                        @if (SecurityType != null)
+                        {
+                            foreach (var securityType in SecurityType)
+                            {
+                                <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Address of Security:</label>
+                    <textarea class="form-control" placeholder="Enter Address of Security" maxlength="160" name="AddressofSecurity1"></textarea>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Owner of Security:</label>
+                    <input type="text" class="form-control" placeholder="Enter Owner of Security" maxlength="100" name="OwnerofSecurity1" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Unique Identification Type of Security Owner :</label>
+                    <select class="form-control" name="SecurityUniqueIdentificationType1">
+                        <option selected="selected" value="">--Select Unique Identification Type of Security Owner--</option>
+                        <option value="BVN">BVN</option>
+                        <option value="TIN">TIN</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Unique Identifier of Security Owner:</label>
+                    <input type="text" class="form-control" placeholder="Enter Unique Identifier of Security Owner" maxlength="15" name="SecurityUniqueIdentificationNumber1" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                </div>
+            </div>
+
+            <!--Collateral-->
+            <div id="collateralCRMS700" class="general">
+                <!--One-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure2" id="CollateralSecure2">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType2">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Address of Security:</label>
+                        <textarea class="form-control" placeholder="Enter Address of Security" maxlength="160" name="AddressofSecurity2"></textarea>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Owner of Security:</label>
+                        <input type="text" class="form-control" placeholder="Enter Owner of Security" maxlength="100" name="OwnerofSecurity2" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Unique Identification Type of Security Owner :</label>
+                        <select class="form-control" name="SecurityUniqueIdentificationType2">
+                            <option selected="selected" value="">--Select Unique Identification Type of Security Owner--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Unique Identifier of Security Owner:</label>
+                        <input type="text" class="form-control" placeholder="Enter Unique Identifier of Security Owner" maxlength="15" name="SecurityUniqueIdentificationNumber2" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+                </div>
+                <hr />
+
+                <!--Two-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure3" id="CollateralSecure3">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType3">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Address of Security:</label>
+                        <textarea class="form-control" placeholder="Enter Address of Security" maxlength="160" name="AddressofSecurity3"></textarea>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Owner of Security:</label>
+                        <input type="text" class="form-control" placeholder="Enter Owner of Security" maxlength="100" name="OwnerofSecurity3" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Unique Identification Type of Security Owner :</label>
+                        <select class="form-control" name="SecurityUniqueIdentificationType3">
+                            <option selected="selected" value="">--Select Unique Identification Type of Security Owner--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Unique Identifier of Security Owner:</label>
+                        <input type="text" class="form-control" placeholder="Enter Unique Identifier of Security Owner" maxlength="15" name="SecurityUniqueIdentificationNumber3" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+                </div>
+                <hr />
+
+                <!--Three-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure4" id="CollateralSecure4">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType4">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Address of Security:</label>
+                        <textarea class="form-control" placeholder="Enter Address of Security" maxlength="160" name="AddressofSecurity4"></textarea>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Owner of Security:</label>
+                        <input type="text" class="form-control" placeholder="Enter Owner of Security" maxlength="100" name="OwnerofSecurity4" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Unique Identification Type of Security Owner :</label>
+                        <select class="form-control" name="SecurityUniqueIdentificationType4">
+                            <option selected="selected" value="">--Select Unique Identification Type of Security Owner--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Unique Identifier of Security Owner:</label>
+                        <input type="text" class="form-control" placeholder="Enter Unique Identifier of Security Owner" maxlength="15" name="SecurityUniqueIdentificationNumber4" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+                </div>
+                <hr />
+
+                <!--Four-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure5" id="CollateralSecure5">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType5">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Address of Security:</label>
+                        <textarea class="form-control" placeholder="Enter Address of Security" maxlength="160" name="AddressofSecurity5"></textarea>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Owner of Security:</label>
+                        <input type="text" class="form-control" placeholder="Enter Owner of Security" maxlength="100" name="OwnerofSecurity5" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Unique Identification Type of Security Owner :</label>
+                        <select class="form-control" name="SecurityUniqueIdentificationType5">
+                            <option selected="selected" value="">--Select Unique Identification Type of Security Owner--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Unique Identifier of Security Owner:</label>
+                        <input type="text" class="form-control" placeholder="Enter Unique Identifier of Security Owner" maxlength="15" name="SecurityUniqueIdentificationNumber5" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+                </div>
+                <hr />
+
+                <!--Five-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure6" id="CollateralSecure6">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType6">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Address of Security:</label>
+                        <textarea class="form-control" placeholder="Enter Address of Security" maxlength="160" name="AddressofSecurity6"></textarea>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Owner of Security:</label>
+                        <input type="text" class="form-control" placeholder="Enter Owner of Security" maxlength="100" name="OwnerofSecurity6" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Unique Identification Type of Security Owner :</label>
+                        <select class="form-control" name="SecurityUniqueIdentificationType6">
+                            <option selected="selected" value="">--Select Unique Identification Type of Security Owner--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Unique Identifier of Security Owner:</label>
+                        <input type="text" class="form-control" placeholder="Enter Unique Identifier of Security Owner" maxlength="15" name="SecurityUniqueIdentificationNumber6" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+                </div>
+                <hr />
+
+                <!--Six-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure7" id="CollateralSecure7">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType7">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Address of Security:</label>
+                        <textarea class="form-control" placeholder="Enter Address of Security" maxlength="160" name="AddressofSecurity7"></textarea>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Owner of Security:</label>
+                        <input type="text" class="form-control" placeholder="Enter Owner of Security" maxlength="100" name="OwnerofSecurity7" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Unique Identification Type of Security Owner :</label>
+                        <select class="form-control" name="SecurityUniqueIdentificationType7">
+                            <option selected="selected" value="">--Select Unique Identification Type of Security Owner--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Unique Identifier of Security Owner:</label>
+                        <input type="text" class="form-control" placeholder="Enter Unique Identifier of Security Owner" maxlength="15" name="SecurityUniqueIdentificationNumber7" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+                </div>
+                <hr />
+
+                <!--Seven-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure8" id="CollateralSecure8">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType8">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Address of Security:</label>
+                        <textarea class="form-control" placeholder="Enter Address of Security" maxlength="160" name="AddressofSecurity8"></textarea>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Owner of Security:</label>
+                        <input type="text" class="form-control" placeholder="Enter Owner of Security" maxlength="100" name="OwnerofSecurity8" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Unique Identification Type of Security Owner :</label>
+                        <select class="form-control" name="SecurityUniqueIdentificationType8">
+                            <option selected="selected" value="">--Select Unique Identification Type of Security Owner--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Unique Identifier of Security Owner:</label>
+                        <input type="text" class="form-control" placeholder="Enter Unique Identifier of Security Owner" maxlength="15" name="SecurityUniqueIdentificationNumber8" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+                </div>
+                <hr />
+
+                <!--Eight-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure9" id="CollateralSecure9">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType9">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Address of Security:</label>
+                        <textarea class="form-control" placeholder="Enter Address of Security" maxlength="160" name="AddressofSecurity9"></textarea>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Owner of Security:</label>
+                        <input type="text" class="form-control" placeholder="Enter Owner of Security" maxlength="100" name="OwnerofSecurity9" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Unique Identification Type of Security Owner :</label>
+                        <select class="form-control" name="SecurityUniqueIdentificationType9">
+                            <option selected="selected" value="">--Select Unique Identification Type of Security Owner--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Unique Identifier of Security Owner:</label>
+                        <input type="text" class="form-control" placeholder="Enter Unique Identifier of Security Owner" maxlength="15" name="SecurityUniqueIdentificationNumber9" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+                </div>
+                <hr />
+
+                <!--Nine-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure10" id="CollateralSecure10">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType10">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Address of Security:</label>
+                        <textarea class="form-control" placeholder="Enter Address of Security" maxlength="160" name="AddressofSecurity10"></textarea>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Owner of Security:</label>
+                        <input type="text" class="form-control" placeholder="Enter Owner of Security" maxlength="100" name="OwnerofSecurity10" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Unique Identification Type of Security Owner :</label>
+                        <select class="form-control" name="SecurityUniqueIdentificationType10">
+                            <option selected="selected" value="">--Select Unique Identification Type of Security Owner--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Unique Identifier of Security Owner:</label>
+                        <input type="text" class="form-control" placeholder="Enter Unique Identifier of Security Owner" maxlength="15" name="SecurityUniqueIdentificationNumber10" />
+                    </div>
+                </div>
+
+            </div>
+            <!--Collateral-->
+
+            <div class="form-group general">
+                <div class="form-group">
+                    <label class="text-primary">Guarantor Information</label>
+                    <div class="col-sm-4">
+                        <label>Guarantee <span class="text-danger">*</span> :</label>
+                        <select class="form-control" name="Guarantee1" id="Guarantee1">
+                            <option value="YES">YES</option>
+                            <option value="NO">NO</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Guarantee Type:</label>
+                        <select class="form-control" name="GuaranteeType1">
+                            <option selected="selected" value="">--Select Guarantee Type--</option>
+                            <option value="INDIVIDUAL">INDIVIDUAL</option>
+                            <option value="NON-INDIVIDUAL">NON-INDIVIDUAL</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Guarantor Unique Indetification Type:</label>
+                        <select class="form-control" name="GuarantorUniqueIdentificationType1">
+                            <option selected="selected" value="">--Select Guarantor Unique Indetification Type--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Guarantor Unique Indetification:</label>
+                        <input type="text" class="form-control" placeholder="Enter Guarantor Unique Indetification" maxlength="15" name="GuarantorUniqueIdentificationNumber1" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                        <button type="button" class='btn btn-success' id='addGuarantorCRMS700' value="Add Collateral">Add more</button>
+                        <button type="button" class='btn btn-danger' id='removeGuarantorCRMS700' value="Remove Collateral">Remove all</button>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Amount Guaranteed (NGN):</label>
+                        <input type="text" class="form-control" maxlength="21" placeholder="Enter Amount Guaranteed" name="AmountGuaranteed1" value="0" />
+                    </div>
+                </div>
+            </div>
+
+            <!--Guarantor-->
+            <div id="guarantorCRMS700" class="general">
+                <!--One-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Guarantee Type:</label>
+                        <select class="form-control" name="GuaranteeType2" id="GuaranteeType2">
+                            <option selected="selected" value="">--Select Guarantee Type--</option>
+                            <option value="INDIVIDUAL">INDIVIDUAL</option>
+                            <option value="NON-INDIVIDUAL">NON-INDIVIDUAL</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Guarantor Unique Indetification Type:</label>
+                        <select class="form-control" name="GuarantorUniqueIdentificationType2">
+                            <option selected="selected" value="">--Select Guarantor Unique Indetification Type--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Guarantor Unique Indetification:</label>
+                        <input type="text" class="form-control" placeholder="Enter Guarantor Unique Indetification" maxlength="15" name="GuarantorUniqueIdentificationNumber2" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Amount Guaranteed (NGN):</label>
+                        <input type="text" class="form-control" maxlength="21" placeholder="Enter Amount Guaranteed" name="AmountGuaranteed2" value="0" />
+                    </div>
+                </div>
+                <hr />
+
+                <!--Two-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Guarantee Type:</label>
+                        <select class="form-control" name="GuaranteeType3" id="GuaranteeType3">
+                            <option selected="selected" value="">--Select Guarantee Type--</option>
+                            <option value="INDIVIDUAL">INDIVIDUAL</option>
+                            <option value="NON-INDIVIDUAL">NON-INDIVIDUAL</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Guarantor Unique Indetification Type:</label>
+                        <select class="form-control" name="GuarantorUniqueIdentificationType3">
+                            <option selected="selected" value="">--Select Guarantor Unique Indetification Type--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Guarantor Unique Indetification:</label>
+                        <input type="text" class="form-control" placeholder="Enter Guarantor Unique Indetification" maxlength="15" name="GuarantorUniqueIdentificationNumber3" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Amount Guaranteed (NGN):</label>
+                        <input type="text" class="form-control" maxlength="21" placeholder="Enter Amount Guaranteed" name="AmountGuaranteed3" value="0" />
+                    </div>
+                </div>
+                <hr />
+
+                <!--Three-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Guarantee Type:</label>
+                        <select class="form-control" name="GuaranteeType4" id="GuaranteeType4">
+                            <option selected="selected" value="">--Select Guarantee Type--</option>
+                            <option value="INDIVIDUAL">INDIVIDUAL</option>
+                            <option value="NON-INDIVIDUAL">NON-INDIVIDUAL</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Guarantor Unique Indetification Type:</label>
+                        <select class="form-control" name="GuarantorUniqueIdentificationType4">
+                            <option selected="selected" value="">--Select Guarantor Unique Indetification Type--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Guarantor Unique Indetification:</label>
+                        <input type="text" class="form-control" placeholder="Enter Guarantor Unique Indetification" maxlength="15" name="GuarantorUniqueIdentificationNumber4" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Amount Guaranteed (NGN):</label>
+                        <input type="text" class="form-control" maxlength="21" placeholder="Enter Amount Guaranteed" name="AmountGuaranteed4" value="0" />
+                    </div>
+                </div>
+                <hr />
+
+                <!--Four-->
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Guarantee Type:</label>
+                        <select class="form-control" name="GuaranteeType5" id="GuaranteeType5">
+                            <option selected="selected" value="">--Select Guarantee Type--</option>
+                            <option value="INDIVIDUAL">INDIVIDUAL</option>
+                            <option value="NON-INDIVIDUAL">NON-INDIVIDUAL</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Guarantor Unique Indetification Type:</label>
+                        <select class="form-control" name="GuarantorUniqueIdentificationType5">
+                            <option selected="selected" value="">--Select Guarantor Unique Indetification Type--</option>
+                            <option value="BVN">BVN</option>
+                            <option value="TIN">TIN</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Guarantor Unique Indetification:</label>
+                        <input type="text" class="form-control" placeholder="Enter Guarantor Unique Indetification" maxlength="15" name="GuarantorUniqueIdentificationNumber5" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Amount Guaranteed (NGN):</label>
+                        <input type="text" class="form-control" maxlength="21" placeholder="Enter Amount Guaranteed" name="AmountGuaranteed5" value="0" />
+                    </div>
+                </div>
+            </div>
+            <!--Guarantor-->
+
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+            <button type="reset" class="btn btn-danger btn-lg">Reset</button>
+        }
+    </div>
+    <!--Third CRMS 300 Div-->
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/account-details.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.datepicker-here').datepicker({
+                dateFormat: "dd/mm/yyyy",
+                minDate: new Date()
+            });
+        });
+
+        $(document).ready(function () {
+            $("#feeCRMS700").hide();
+
+            $("#addFeeCRMS700").click(function () {
+                $("#feeCRMS700").show();
+            });
+
+
+            $("#removeFeeCRMS700").click(function () {
+                $("#feeCRMS700").hide();
+                $("#feeCRMS700").find('input:text').val('0');
+                //$("#feeCRMS100").hide();
+                $("#feeCRMS700 select option").prop('selected', function () {
+                    return this.defaultSelected;
+                });
+            });
+
+            $(document).ready(function () {
+                $("#directorCRMS700").hide();
+
+                $("#addDirectorCRMS700").click(function () {
+                    $("#directorCRMS700").show();
+                });
+
+
+                $("#removeDirectorCRMS700").click(function () {
+                    $("#directorCRMS700").hide();
+                    $("#directorCRMS700").find('input:text').val('');
+                    $("#directorCRMS700").find('input[type=email]').val('');
+                    //$("#feeCRMS100").hide();
+                    $("#directorCRMS700 select option").prop('selected', function () {
+                        return this.defaultSelected;
+                    });
+                });
+            });
+
+            $(document).ready(function () {
+                $("#collateralCRMS700").hide();
+
+                $("#addCollateralCRMS700").click(function () {
+                    $("#collateralCRMS700").show();
+                });
+
+                $("#removeCollateralCRMS700").click(function () {
+                    $("#collateralCRMS700").hide();
+                    //$("#feeCRMS100").hide();
+                    $("#collateralCRMS700 select option").prop('selected', function () {
+                        return this.defaultSelected;
+                    });
+                });
+            });
+
+            $(document).ready(function () {
+                $("#guarantorCRMS700").hide();
+
+                $("#addGuarantorCRMS700").click(function () {
+                    $("#guarantorCRMS700").show();
+                });
+
+
+                $("#removeGuarantorCRMS700").click(function () {
+                    $("#guarantorCRMS700").hide();
+                    $("#guarantorCRMS700").find('input:text').val('0');
+                    //$("#feeCRMS100").hide();
+                    $("#guarantorCRMS700 select option").prop('selected', function () {
+                        return this.defaultSelected;
+                    });
+                });
+            });
+
+            $(document).ready(function () {
+                $('#formCRMS700').validate({
+                    rules: {
+                        CustomerID: {
+                            required: true,
+                            number: true,
+                            minlength: 8
+                        },
+                        IdentificationNo: {
+                            required: true,
+                            minlength: 11
+                        },
+                        AccountNumber: {
+                            required: true,
+                            number: true,
+                            minlength: 10
+                        },
+                        AmountGuaranteed: {
+                            required: function (element) {
+                                return $("#Guarantee").val() != "NO";
+                            },
+                            number: true
+                        },
+                        Tenor: {
+                            required: true,
+                            number: true
+                        },
+                        FeeAmount1: {
+                            required: true,
+                            number: true
+                        },
+                        FeeAmount2: {
+                            number: true
+                        },
+                        FeeAmount3: {
+                            number: true
+                        },
+                        FeeAmount4: {
+                            number: true
+                        },
+                        FeeAmount5: {
+                            number: true
+                        },
+                        FeeAmount6: {
+                            number: true
+                        },
+                        FeeAmount7: {
+                            number: true
+                        },
+                        FeeAmount8: {
+                            number: true
+                        },
+                        FeeAmount9: {
+                            number: true
+                        },
+                        FeeAmount10: {
+                            number: true
+                        },
+                        FeeAmount11: {
+                            number: true
+                        },
+                        FeeAmount12: {
+                            number: true
+                        },
+                        FeeAmount13: {
+                            number: true
+                        },
+                        FeeAmount14: {
+                            number: true
+                        },
+                        FeeAmount15: {
+                            number: true
+                        },
+                        FeeAmount16: {
+                            number: true
+                        },
+                        InterestRate: {
+                            required: true,
+                            number: true
+                        },
+                        CollateralSecure1: {
+                            required: function (element) {
+                                return $("#CollateralPresent1").val() != "NO";
+                            }
+                        },
+                        SecurityType1: {
+                            required: function (element) {
+                                return $("#CollateralSecure1").val() != "";
+                            }
+                        },
+                        SecurityUniqueIdentificationNumber1: {
+                            required: function (element) {
+                                return $("#CollateralSecure1").val() == "YES";
+                            },
+                            minlength: 11
+                        },
+                        AddressofSecurity1: {
+                            required: function (element) {
+                                return $("#CollateralSecure1").val() == "YES";
+                            }
+                        },
+                        OwnerofSecurity1: {
+                            required: function (element) {
+                                return $("#CollateralSecure1").val() == "YES";
+                            }
+                        },
+                        SecurityUniqueIdentificationType1: {
+                            required: function (element) {
+                                return $("#CollateralSecure1").val() == "YES";
+                            }
+                        },
+                        SecurityType2: {
+                            required: function (element) {
+                                return $("#CollateralSecure2").val() != "";
+                            }
+                        },
+                        SecurityUniqueIdentificationNumber2: {
+                            required: function (element) {
+                                return $("#CollateralSecure2").val() == "YES";
+                            },
+                            minlength: 11
+                        },
+                        AddressofSecurity2: {
+                            required: function (element) {
+                                return $("#CollateralSecure2").val() == "YES";
+                            }
+                        },
+                        OwnerofSecurity2: {
+                            required: function (element) {
+                                return $("#CollateralSecure2").val() == "YES";
+                            }
+                        },
+                        SecurityUniqueIdentificationType2: {
+                            required: function (element) {
+                                return $("#CollateralSecure2").val() == "YES";
+                            }
+                        },
+                        SecurityType3: {
+                            required: function (element) {
+                                return $("#CollateralSecure3").val() != "";
+                            }
+                        },
+                        SecurityUniqueIdentificationNumber3: {
+                            required: function (element) {
+                                return $("#CollateralSecure3").val() == "YES";
+                            },
+                            minlength: 11
+                        },
+                        AddressofSecurity3: {
+                            required: function (element) {
+                                return $("#CollateralSecure3").val() == "YES";
+                            }
+                        },
+                        OwnerofSecurity3: {
+                            required: function (element) {
+                                return $("#CollateralSecure3").val() == "YES";
+                            }
+                        },
+                        SecurityUniqueIdentificationType3: {
+                            required: function (element) {
+                                return $("#CollateralSecure3").val() == "YES";
+                            }
+                        },
+                        SecurityType4: {
+                            required: function (element) {
+                                return $("#CollateralSecure4").val() != "";
+                            }
+                        },
+                        SecurityUniqueIdentificationNumber4: {
+                            required: function (element) {
+                                return $("#CollateralSecure4").val() == "YES";
+                            },
+                            minlength: 11
+                        },
+                        AddressofSecurity4: {
+                            required: function (element) {
+                                return $("#CollateralSecure4").val() == "YES";
+                            }
+                        },
+                        OwnerofSecurity4: {
+                            required: function (element) {
+                                return $("#CollateralSecure4").val() == "YES";
+                            }
+                        },
+                        SecurityUniqueIdentificationType4: {
+                            required: function (element) {
+                                return $("#CollateralSecure4").val() == "YES";
+                            }
+                        },
+                        SecurityType5: {
+                            required: function (element) {
+                                return $("#CollateralSecure5").val() != "";
+                            }
+                        },
+                        SecurityUniqueIdentificationNumber5: {
+                            required: function (element) {
+                                return $("#CollateralSecure5").val() == "YES";
+                            },
+                            minlength: 11
+                        },
+                        AddressofSecurity5: {
+                            required: function (element) {
+                                return $("#CollateralSecure5").val() == "YES";
+                            }
+                        },
+                        OwnerofSecurity5: {
+                            required: function (element) {
+                                return $("#CollateralSecure5").val() == "YES";
+                            }
+                        },
+                        SecurityUniqueIdentificationType5: {
+                            required: function (element) {
+                                return $("#CollateralSecure5").val() == "YES";
+                            }
+                        },
+                        SecurityType6: {
+                            required: function (element) {
+                                return $("#CollateralSecure6").val() != "";
+                            }
+                        },
+                        SecurityUniqueIdentificationNumber6: {
+                            required: function (element) {
+                                return $("#CollateralSecure6").val() == "YES";
+                            },
+                            minlength: 11
+                        },
+                        AddressofSecurity6: {
+                            required: function (element) {
+                                return $("#CollateralSecure6").val() == "YES";
+                            }
+                        },
+                        OwnerofSecurity6: {
+                            required: function (element) {
+                                return $("#CollateralSecure6").val() == "YES";
+                            }
+                        },
+                        SecurityUniqueIdentificationType6: {
+                            required: function (element) {
+                                return $("#CollateralSecure6").val() == "YES";
+                            }
+                        },
+                        SecurityType7: {
+                            required: function (element) {
+                                return $("#CollateralSecure7").val() != "";
+                            }
+                        },
+                        SecurityUniqueIdentificationNumber7: {
+                            required: function (element) {
+                                return $("#CollateralSecure7").val() == "YES";
+                            },
+                            minlength: 11
+                        },
+                        AddressofSecurity7: {
+                            required: function (element) {
+                                return $("#CollateralSecure7").val() == "YES";
+                            }
+                        },
+                        OwnerofSecurity7: {
+                            required: function (element) {
+                                return $("#CollateralSecure7").val() == "YES";
+                            }
+                        },
+                        SecurityUniqueIdentificationType7: {
+                            required: function (element) {
+                                return $("#CollateralSecure7").val() == "YES";
+                            }
+                        },
+                        SecurityType8: {
+                            required: function (element) {
+                                return $("#CollateralSecure8").val() != "";
+                            }
+                        },
+                        SecurityUniqueIdentificationNumber8: {
+                            required: function (element) {
+                                return $("#CollateralSecure8").val() == "YES";
+                            },
+                            minlength: 11
+                        },
+                        AddressofSecurity8: {
+                            required: function (element) {
+                                return $("#CollateralSecure8").val() == "YES";
+                            }
+                        },
+                        OwnerofSecurity8: {
+                            required: function (element) {
+                                return $("#CollateralSecure8").val() == "YES";
+                            }
+                        },
+                        SecurityUniqueIdentificationType8: {
+                            required: function (element) {
+                                return $("#CollateralSecure8").val() == "YES";
+                            }
+                        },
+                        SecurityType9: {
+                            required: function (element) {
+                                return $("#CollateralSecure9").val() != "";
+                            }
+                        },
+                        SecurityUniqueIdentificationNumber9: {
+                            required: function (element) {
+                                return $("#CollateralSecure9").val() == "YES";
+                            },
+                            minlength: 11
+                        },
+                        AddressofSecurity9: {
+                            required: function (element) {
+                                return $("#CollateralSecure9").val() == "YES";
+                            }
+                        },
+                        OwnerofSecurity9: {
+                            required: function (element) {
+                                return $("#CollateralSecure9").val() == "YES";
+                            }
+                        },
+                        SecurityUniqueIdentificationType9: {
+                            required: function (element) {
+                                return $("#CollateralSecure9").val() == "YES";
+                            }
+                        },
+                        SecurityType10: {
+                            required: function (element) {
+                                return $("#CollateralSecure10").val() != "";
+                            }
+                        },
+                        SecurityUniqueIdentificationNumber10: {
+                            required: function (element) {
+                                return $("#CollateralSecure10").val() == "YES";
+                            },
+                            minlength: 11
+                        },
+                        AddressofSecurity10: {
+                            required: function (element) {
+                                return $("#CollateralSecure10").val() == "YES";
+                            }
+                        },
+                        OwnerofSecurity10: {
+                            required: function (element) {
+                                return $("#CollateralSecure10").val() == "YES";
+                            }
+                        },
+                        SecurityUniqueIdentificationType10: {
+                            required: function (element) {
+                                return $("#CollateralSecure10").val() == "YES";
+                            }
+                        },
+                        DirectorUniqueIdentificationNumber1: {
+                            required: function (element) {
+                                return $("#DirectorUniqueIdentificationType1").val() != "";
+                            },
+                            minlength: 11
+                        },
+                        DirectorEmail1: {
+                            required: function (element) {
+                                return $("#DirectorUniqueIdentificationType1").val() != "";
+                            },
+                        },
+                        DirectorUniqueIdentificationNumber2: {
+                            required: function (element) {
+                                return $("#DirectorUniqueIdentificationType2").val() != "";
+                            },
+                            minlength: 11
+                        },
+                        DirectorEmail2: {
+                            required: function (element) {
+                                return $("#DirectorUniqueIdentificationType2").val() != "";
+                            },
+                        },
+                        DirectorUniqueIdentificationNumber3: {
+                            required: function (element) {
+                                return $("#DirectorUniqueIdentificationType3").val() != "";
+                            },
+                            minlength: 11
+                        },
+                        DirectorEmail3: {
+                            required: function (element) {
+                                return $("#DirectorUniqueIdentificationType3").val() != "";
+                            },
+                        },
+                        DirectorUniqueIdentificationNumber4: {
+                            required: function (element) {
+                                return $("#DirectorUniqueIdentificationType4").val() != "";
+                            },
+                            minlength: 11
+                        },
+                        DirectorEmail4: {
+                            required: function (element) {
+                                return $("#DirectorUniqueIdentificationType4").val() != "";
+                            },
+                        },
+                        DirectorUniqueIdentificationNumber5: {
+                            required: function (element) {
+                                return $("#DirectorUniqueIdentificationType5").val() != "";
+                            },
+                            minlength: 11
+                        },
+                        DirectorEmail5: {
+                            required: function (element) {
+                                return $("#DirectorUniqueIdentificationType5").val() != "";
+                            },
+                        },
+                        BenefciaryAccount:
+                        {
+                            required: true,
+                            number: true,
+                            minlength: 10
+                        },
+                        GuaranteeType1: {
+                            required: function (element) {
+                                return $("#Guarantee1").val() != "NO";
+                            }
+                        },
+                        GuarantorUniqueIdentificationType1: {
+                            required: function (element) {
+                                return $("#Guarantee1").val() != "NO";
+                            }
+                        },
+                        GuarantorUniqueIdentificationNumber1: {
+                            required: function (element) {
+                                return $("#Guarantee1").val() != "NO";
+                            },
+                            minlength: 11
+                        },
+                        AmountGuaranteed1: {
+                            required: function (element) {
+                                return $("#Guarantee1").val() != "NO";
+                            },
+                            number: true
+                        },
+                        GuarantorUniqueIdentificationType2: {
+                            required: function (element) {
+                                return $("#GuaranteeType2").val() != "";
+                            }
+                        },
+                        GuarantorUniqueIdentificationNumber2: {
+                            required: function (element) {
+                                return $("#GuaranteeType2").val() != "";
+                            },
+                            minlength: 11
+                        },
+                        AmountGuaranteed2: {
+                            required: function (element) {
+                                return $("#GuaranteeType2").val() != "";
+                            },
+                            number: true
+                        },
+                        GuarantorUniqueIdentificationType3: {
+                            required: function (element) {
+                                return $("#GuaranteeType3").val() != "";
+                            }
+                        },
+                        GuarantorUniqueIdentificationNumber3: {
+                            required: function (element) {
+                                return $("#GuaranteeType3").val() != "";
+                            },
+                            minlength: 11
+                        },
+                        AmountGuaranteed3: {
+                            required: function (element) {
+                                return $("#GuaranteeType3").val() != "";
+                            },
+                            number: true
+                        },
+                        GuarantorUniqueIdentificationType4: {
+                            required: function (element) {
+                                return $("#GuaranteeType4").val() != "";
+                            }
+                        },
+                        GuarantorUniqueIdentificationNumber4: {
+                            required: function (element) {
+                                return $("#GuaranteeType4").val() != "";
+                            },
+                            minlength: 11
+                        },
+                        AmountGuaranteed4: {
+                            required: function (element) {
+                                return $("#GuaranteeType4").val() != "";
+                            },
+                            number: true
+                        },
+                        GuarantorUniqueIdentificationType5: {
+                            required: function (element) {
+                                return $("#GuaranteeType5").val() != "";
+                            }
+                        },
+                        GuarantorUniqueIdentificationNumber5: {
+                            required: function (element) {
+                                return $("#GuaranteeType5").val() != "";
+                            },
+                            minlength: 11
+                        },
+                        AmountGuaranteed5: {
+                            required: function (element) {
+                                return $("#GuaranteeType5").val() != "";
+                            },
+                            number: true
+                        },
+                        RelationshipType: {
+                            required: true,
+                            minlength: 1
+                        },
+                        FundingSource: {
+                            required: true,
+                            minlength: 1
+                        },
+                        SpecialisedLoanPeriod: {
+                            required: function (element) {
+                                return $("#SpecialisedLoan").val() != "NO";
+                            }
+                        },
+                        SecurityType: {
+                            required: function (element) {
+                                return $("#CollateralPresent").val() != "NO";
+                            }
+                        },
+                        ECCINumber: {
+                            required: function (element) {
+                                return $("#FundingSourceCategory").val() != "LCY";
+                            }
+                        },
+                        SyndicationReferenceNumber: {
+                            required: function (element) {
+                                return $("#Syndication").val() != "NO";
+                            }
+                        },
+                        SyndicationName: {
+                            required: function (element) {
+                                return $("#Syndication").val() != "NO";
+                            }
+                        },
+                        SyndicationTotalAmount: {
+                            required: function (element) {
+                                return $("#Syndication").val() != "NO";
+                            }
+                        }
+                    }
+
+                });
+            });
+
+            $(document).ready(function () {
+                $('#AccountNumber').on('blur', function () {
+                    var AccountNumber = $('#AccountNumber').val();
+                    var AccountName = accountFunction(AccountNumber);
+
+                    $('#CustomerName').val(AccountName.toString());
+                    if (AccountName == '') {
+                        alert('Wrong Account Number, Kindly reconfirm');
+                    }
+                });
+            });
+
+        //    $(document).ready(function () {
+        //        $('#Tenor300').on('change paste mousedown', function () {
+        //            var a = $('#EffectiveDate300').val();
+        //            var b = $('#ExpiryDate300').val();
+        //            var c = $('#Tenor300');
+
+        //            var tempA = a.split('/');
+        //            var tempB = b.split('/');
+
+        //            var date1 = new Date(tempA[1] + '/' + tempA[0] + '/' + tempA[2]);
+        //            var date2 = new Date(tempB[1] + '/' + tempB[0] + '/' + tempB[2]);
+        //            var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        //            var diffDays = Math.round(timeDiff / (1000 * 3600 * 24) / 30);
+
+        //            c.val(diffDays);
+        //            //alert(a);
+        //            //alert(b);
+        //            console.log(diffDays);
+        //        });
+        //    });
+        });
+
+        $(document).ready(function () {
+            $('#BusinessLines').change(function () {
+                if ($(this).data('options') == undefined) {
+                    /*Taking an array of all options-2 and kind of embedding it on the select1*/
+                    $(this).data('options', $('#BusinessLinesSubsector option').clone());
+                }
+                var id = $(this).val();
+                var options = $(this).data('options').filter('[name=' + id + ']');
+                $('#BusinessLinesSubsector').html(options);
+            });
+        });
+
+        $(document).ready(function () {
+            $('#CBusinessLines').change(function () {
+                if ($(this).data('options') == undefined) {
+                    /*Taking an array of all options-2 and kind of embedding it on the select1*/
+                    $(this).data('options', $('#CBusinessLinesSubsector option').clone());
+                }
+                var id = $(this).val();
+                var options = $(this).data('options').filter('[name=' + id + ']');
+                $('#CBusinessLinesSubsector').html(options);
+            });
+        });
+
+        $(document).ready(function () {
+            $('#FundingSourceCategory').change(function () {
+                if ($('#FundingSourceCategory').find(":selected").text() == 'LCY') {
+                    $('#ECCINumber').val('0');
+                } else {
+                    $('#ECCINumber').val('');
+                }
+            });
+        });
+    </script>
+}

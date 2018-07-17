@@ -1,0 +1,182 @@
+﻿@using CRMS.Utils
+@{
+    ViewBag.Title = "CRMS 400A";
+
+    var saveCrms400A = ViewBag.saveCrms400A;
+}
+
+@if (saveCrms400A == true)
+{
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Data saved successfully</strong>
+    </div>
+}
+else if (saveCrms400A == false)
+{
+    <div class="alert alert-danger alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Error Saving, Try again later</strong>
+    </div>
+}
+
+<div class="row">
+    <div class="col-sm-7">
+        <h4>PURPOSE</h4>
+        <h4>CRMS 400A - Rendering of Rolled-Over Facility
+            {Effective Date (not earlier than maturity date of exisitng facility), Tenor & Expiry Date changes only}</h4>
+        <p class="text-danger">Note: Data Inputted should be valid and accurate. Kindly Re-confirm before saving.</p>
+        <br />
+    </div>
+</div>
+
+<div class="row">
+    <br />
+    <!--Fourth CRMS 400A Div-->
+    <div class="isCRMS_400A col-sm-12 general">
+        <h3>Rendering of Rolled-Over Facility {Effective Date (not earlier than maturity date of exisitng facility), Tenor & Expiry Date changes only}</h3>
+        <p><span class="text-danger">*</span> fields are required</p>
+        <br />
+        @using (Html.BeginForm("Fourth", "Home", FormMethod.Post, new { @class = "form-horizontal", @id = "formCRMS400A" }))
+        { 
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Code:</label>
+                    <input type="text" class="form-control" value="CRMS 400A" readonly="readonly" name="code"/>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Customer ID <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Customer ID" maxlength="8" required="required" name="CustomerID" id="CustomerID" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Customer Account Number <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Customer Account Number" maxlength="10" required="required" name="AccountNumber" id="AccountNumber" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Customer Name <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Click to fetch account name</span>
+                    <input type="text" class="form-control" placeholder="Enter Customer Name" required="required" readonly="readonly" name="CustomerName" id="CustomerName" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Unique Identification Type <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="UniqueIdentificationType" id="UniqueIdentificationType">
+                        <option value="BVN">BVN</option>
+                        <option value="TIN">TIN</option>
+                        <option value="GOVT">GOVT</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Unique Identification No <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Unique Identification No" maxlength="15" required="required" name="IdentificationNo" id="IdentificationNo" onkeyup="this.value = this.value.replace(/[^\d-]/g, '')" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>CRMS Reference No <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Format: xxxxx(bankcode)/yyyymmdd/xxxxx(sequence number)</span>
+                    <input type="text" class="form-control" placeholder="xxxxx(bankcode)/yyyymmdd/xxxxx(sequence number)" maxlength="25" required="required" name="CRMSRefNo" id="CRMSRefNo" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Effective Date <span class="text-danger">*</span> :</label>
+                    <span class="help-block">click textfield to use datepicker</span>
+                    <input type="text" placeholder="DD/MM/YYYY" class="form-control jqueryui-datepicker" data-position="bottom left" data-language="en" required="required" name="EffectiveDate" id="EffectiveDate600" readonly="readonly" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Expiry Date <span class="text-danger">*</span> :</label>
+                    <span class="help-block">click textfield to use datepicker</span>
+                    <input type="text" placeholder="DD/MM/YYYY" class="form-control jqueryui-datepicker" data-position="bottom left" data-language="en" required="required" name="ExpiryDate" id="ExpiryDate600" readonly="readonly" />
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Tenor <span class="text-danger">*</span> :</label>
+                    <span class="help-block">(in months) click field to auto calculate</span>
+                    <input type="text" placeholder="Enter Tenor" class="form-control" name="Tenor" id="Tenor600" required="required" readonly="readonly" />
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+            <button type="reset" class="btn btn-danger btn-lg">Reset</button>
+        }
+    </div>
+    <!--Fourth CRMS 400A Div-->
+</div>
+
+@section scripts
+{
+<script src="~/Scripts/account-details.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.datepicker-here').datepicker({
+                dateFormat: "dd/mm/yyyy",
+                minDate: new Date()
+            });
+        });
+
+        $(document).ready(function () {
+            $('#formCRMS400A').validate({
+                rules: {
+                    CustomerID: {
+                        required: true,
+                        number: true,
+                        minlength: 8
+                    },
+                    AccountNumber: {
+                        required: true,
+                        number: true,
+                        minlength: 10
+                    },
+                    IdentificationNo: {
+                        required: true,
+                        minlength: 11
+                    }
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $('#AccountNumber').on('blur', function () {
+                var AccountNumber = $('#AccountNumber').val();
+                var AccountName = accountFunction(AccountNumber);
+
+                $('#CustomerName').val(AccountName.toString());
+                if (AccountName == '') {
+                    alert('Wrong Account Number, Kindly reconfirm');
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $('#Tenor600').on('change paste mousedown', function () {
+                var a = $('#EffectiveDate600').val();
+                var b = $('#ExpiryDate600').val();
+                var c = $('#Tenor600');
+
+                var tempA = a.split('/');
+                var tempB = b.split('/');
+
+                var date1 = new Date(tempA[1] + '/' + tempA[0] + '/' + tempA[2]);
+                var date2 = new Date(tempB[1] + '/' + tempB[0] + '/' + tempB[2]);
+                var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+                var diffDays = Math.round(timeDiff / (1000 * 3600 * 24) / 30);
+
+                c.val(diffDays);
+                //alert(a);
+                //alert(b);
+                console.log(diffDays);
+            });
+        });
+        
+    </script>
+}

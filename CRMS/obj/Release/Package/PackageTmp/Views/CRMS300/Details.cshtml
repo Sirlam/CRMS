@@ -1,0 +1,1346 @@
+﻿@model CRMS.Models.CRMS_300
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CRMS_300</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Account_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Account_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unique_Identifcation_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unique_Identifcation_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unique_Identifcation_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unique_Identifcation_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credit_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credit_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credit_Purpose_By_Business_Lines)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credit_Purpose_By_Business_Lines)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credit_Purpose_By_Business_Lines_Subsector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credit_Purpose_By_Business_Lines_Subsector)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credit_Limit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credit_Limit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Outstanding_Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Outstanding_Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type13)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type13)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount13)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount13)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type14)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type14)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount14)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount14)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type15)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type15)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount15)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount15)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Type16)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Type16)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee_Amount16)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee_Amount16)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Effective_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Effective_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Expiry_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Expiry_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repayment_Agreement_Mode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repayment_Agreement_Mode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Interest_Rate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Interest_Rate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beneficiary_Account_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beneficiary_Account_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location_of_Beneficiary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location_of_Beneficiary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Relationship_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Relationship_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Company_Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company_Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Funding_Source_Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funding_Source_Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ECCI_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ECCI_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Funding_Source)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funding_Source)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Legal_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Legal_Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Classification_By_Business_Lines)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Classification_By_Business_Lines)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Classification_By_Business_Lines_Subsector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Classification_By_Business_Lines_Subsector)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Specialised_Loan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specialised_Loan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Specialised_Loan_Period)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specialised_Loan_Period)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Type1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Type1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Number1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Number1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Email1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Email1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Type2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Type2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Number2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Number2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Email2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Email2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Type3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Type3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Number3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Number3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Email3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Email3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Type4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Type4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Number4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Number4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Email4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Email4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Type5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Type5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Number5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Number5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director_Id_Email5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director_Id_Email5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Syndication)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Syndication)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Syndication_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Syndication_Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Syndication_Reference_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Syndication_Reference_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Collateral_Present1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collateral_Present1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Collateral_Secure1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collateral_Secure1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Type1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Type1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_of_Security1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_of_Security1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner_of_Security1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner_of_Security1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Type1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Type1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Number1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Number1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Collateral_Secure2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collateral_Secure2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Type2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Type2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_of_Security2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_of_Security2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner_of_Security2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner_of_Security2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Type2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Type2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Number2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Number2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Collateral_Secure3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collateral_Secure3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Type3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Type3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_of_Security3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_of_Security3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner_of_Security3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner_of_Security3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Type3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Type3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Number3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Number3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Collateral_Secure4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collateral_Secure4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Type4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Type4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_of_Security4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_of_Security4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner_of_Security4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner_of_Security4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Type4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Type4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Number4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Number4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Collateral_Secure5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collateral_Secure5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Type5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Type5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_of_Security5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_of_Security5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner_of_Security5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner_of_Security5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Type5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Type5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Number5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Number5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Collateral_Secure6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collateral_Secure6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Type6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Type6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_of_Security6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_of_Security6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner_of_Security6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner_of_Security6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Type6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Type6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Number6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Number6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Collateral_Secure7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collateral_Secure7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Type7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Type7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_of_Security7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_of_Security7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner_of_Security7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner_of_Security7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Type7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Type7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Number7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Number7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Collateral_Secure8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collateral_Secure8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Type8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Type8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_of_Security8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_of_Security8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner_of_Security8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner_of_Security8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Type8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Type8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Number8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Number8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Collateral_Secure9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collateral_Secure9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Type9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Type9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_of_Security9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_of_Security9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner_of_Security9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner_of_Security9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Type9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Type9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Number9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Number9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Collateral_Secure10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collateral_Secure10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Type10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Type10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_of_Security10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_of_Security10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner_of_Security10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner_of_Security10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Type10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Type10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Id_Number10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Id_Number10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantee1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantee1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantee_Type1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantee_Type1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantor_Id_Type1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantor_Id_Type1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantor_Id_Number1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantor_Id_Number1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount_Guaranteed1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount_Guaranteed1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantee_Type2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantee_Type2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantor_Id_Type2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantor_Id_Type2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantor_Id_Number2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantor_Id_Number2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount_Guaranteed2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount_Guaranteed2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantee_Type3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantee_Type3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantor_Id_Type3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantor_Id_Type3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantor_Id_Number3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantor_Id_Number3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount_Guaranteed3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount_Guaranteed3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantee_Type4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantee_Type4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantor_Id_Type4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantor_Id_Type4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantor_Id_Number4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantor_Id_Number4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount_Guaranteed4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount_Guaranteed4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantee_Type5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantee_Type5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantor_Id_Type5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantor_Id_Type5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guarantor_Id_Number5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guarantor_Id_Number5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount_Guaranteed5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount_Guaranteed5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inputter_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inputter_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inputter_Date_Stamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inputter_Date_Stamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modifier_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modifier_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modifier_Date_Stamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modifier_Date_Stamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CRMS_Ref_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRMS_Ref_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loan_Ref_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loan_Ref_Number)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

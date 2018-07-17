@@ -1,0 +1,163 @@
+﻿@using System.Net.Mail
+@using CRMS.Utils
+@{
+    ViewBag.Title = "CRMS 600";
+
+    List<CrmsData> BankCodes = ViewBag.BankCodes;
+
+    var saveCrms600 = ViewBag.saveCrms600;
+}
+@if (saveCrms600 == true)
+{
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Data saved successfully</strong>
+    </div>
+    
+    //SmtpClient smtpClient = new SmtpClient("mail.ecobank.com", 25);
+
+    //smtpClient.Credentials = new System.Net.NetworkCredential("boservice@ecobank.com", "2Hard4U123$");
+    //smtpClient.UseDefaultCredentials = true;
+    //smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+    //smtpClient.EnableSsl = true;
+
+    
+}
+else if (saveCrms600 == false)
+{
+    <div class="alert alert-danger alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Error Saving, Try again later</strong>
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-sm-7">
+        <h4>PURPOSE</h4>
+        <h4>CRMS 600 - Register Syndication Information</h4>
+        <p class="text-danger">Note: Data Inputted should be valid and accurate. Kindly Re-confirm before saving.</p>
+        <br />
+    </div>
+</div>
+
+
+<div class="row">
+    <br />
+    <!--Seventh CRMS 600 Div-->
+    <div class="isCRMS_600 col-sm-12 general">
+        <h3>Register Syndication Information</h3>
+        <p><span class="text-danger">*</span> fields are required</p>
+        <br />
+        @using (Html.BeginForm("Seventh", "Home", FormMethod.Post, new { @class = "form-horizontal", @id="formCRMS600" }))
+        {
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Code:</label>
+                    <input type="text" class="form-control" value="CRMS 600" readonly="readonly" name="code" id="code" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Customer ID <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Customer ID" maxlength="8" required="required" name="CustomerID" id="CustomerID" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Customer Account Number <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Customer Account Number" maxlength="10" required="required" name="AccountNumber" id="AccountNumber" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Customer Name <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Click to fetch account name</span>
+                    <input type="text" class="form-control" placeholder="Enter Customer Name" required="required" readonly="readonly" name="CustomerName" id="CustomerName" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Syndication Ref Number <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Syndication Ref Number" required="required" name="SyndicationRefNumber" id="SyndicationRefNumber" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Syndication Name: <span class="text-danger">*</span> :</label>
+                    <textarea class="form-control" placeholder="Enter Syndication Name" name="SyndicationName" id="SyndicationName" required="required"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Syndication Total Amount: <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                    <input type="text" class="form-control" placeholder="Enter Syndication Total Amount" maxlength="21" required="required" name="SyndicationTotalAmount" id="SyndicationTotalAmount" />
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label>Participating Bank Code <span class="text-danger">*</span> :</label>
+                    @if (BankCodes != null)
+                    {
+                        foreach (var bankCodes in BankCodes)
+                        {
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-inline">
+                                    <label><input type="checkbox" value="@bankCodes.BankCode" id="@bankCodes.BankCode" name="ParticipatingBankCode">@bankCodes.BankName</label>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+            <button type="reset" class="btn btn-danger btn-lg">Reset</button>
+        }
+    </div>
+    <!--Seventh CRMS 600 Div-->
+</div>
+
+@section scripts
+{
+<script src="~/Scripts/account-details.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#formCRMS600').validate({
+                rules: {
+                    CustomerID: {
+                        required: true,
+                        number: true,
+                        minlength: 8
+                    },
+                    AccountNumber: {
+                        required: true,
+                        number: true,
+                        minlength: 10
+                    },
+                    CustomerName: "required",
+                    SyndicationName: "required",
+                    SyndicationTotalAmount: {
+                        required: true,
+                        number: true
+                    }, ParticipatingBankCode: {
+                        required: true,
+                        minlength: 1
+                    },
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $('#AccountNumber').on('blur', function () {
+                var AccountNumber = $('#AccountNumber').val();
+                var AccountName = accountFunction(AccountNumber);
+
+                $('#CustomerName').val(AccountName.toString());
+                if (AccountName == '') {
+                    alert('Wrong Account Number, Kindly reconfirm');
+                }
+            });
+        });
+    </script>
+}

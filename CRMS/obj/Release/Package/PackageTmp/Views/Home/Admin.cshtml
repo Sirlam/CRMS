@@ -1,0 +1,57 @@
+﻿@using CRMS.Utils
+@{
+    ViewBag.Title = "Admin";
+    List<Crms100> crms100S = ViewBag.Crms100;
+    List<Crms200> crms200S = ViewBag.Crms200;
+    List<Crms300> crms300S = ViewBag.Crms300;
+    List<Crms400A> crms400As = ViewBag.Crms400A;
+    List<Crms400B> crms400Bs = ViewBag.Crms400B;
+    List<Crms600> crms600S = ViewBag.Crms600;
+    List<String> allowedUsers = new List<string>{ "aoyedere", "chuokafor", "molatunji", "osalam" };
+}
+
+@if (!(allowedUsers.Contains(User.Identity.Name.ToLower())))
+{
+    <h4>Unauthorized, Return to @Html.ActionLink("home", "Index", "Home", new {@class = "red"}) page</h4>
+}
+else
+{
+    <h4>View CRMS Data</h4>
+<br/>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="~/CRMS100/Index" class="btn btn-info btn-lg">CRMS 100</a>
+        </div>
+        <div class="col-md-4">
+            <a href="~/CRMS200/Index" class="btn btn-info btn-lg">CRMS 200</a>
+        </div>
+        <div class="col-md-4">
+            <a href="~/CRMS300/Index" class="btn btn-info btn-lg">CRMS 300</a>
+        </div>
+    </div>
+    
+    <br/>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <a href="~/CRMS400A/Index" class="btn btn-info btn-lg">CRMS 400A</a>
+        </div>
+        <div class="col-md-4">
+            <a href="~/CRMS400B/Index" class="btn btn-info btn-lg">CRMS 400B</a>
+        </div>
+        <div class="col-md-4">
+            <a href="~/CRMS600/Index" class="btn btn-info btn-lg">CRMS 600</a>
+        </div>
+    </div>
+    
+    <br/>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <a href="~/CRMS700/Index" class="btn btn-info btn-lg">CRMS 700</a>
+        </div>
+    </div>
+    
+    
+}
+

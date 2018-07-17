@@ -1,0 +1,2235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CRMS_100">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Customer_Name" Type="text" Nullable="false" />
+          <Property Name="Government_Code" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Legal_Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Type" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines_Subsector" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Limit" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Outstanding_Amount" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type1" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Fee_Amount1" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type2" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount2" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type3" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount3" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type4" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount4" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type5" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount5" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type6" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount6" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type7" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount7" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type8" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount8" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type9" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount9" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type10" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount10" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type11" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount11" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type12" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount12" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type13" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount13" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type14" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount14" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type15" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount15" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type16" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount16" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Effective_Date" Type="date" Nullable="false" />
+          <Property Name="Tenor" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Expiry_Date" Type="date" Nullable="false" />
+          <Property Name="Repayment_Agreement_Mode" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Specialised_Loan" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Specialised_Loan_Period" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Interest_Rate" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Collateral_Present1" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Collateral_Secure1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type1" Type="text" />
+          <Property Name="Collateral_Secure2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type2" Type="text" />
+          <Property Name="Collateral_Secure3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type3" Type="text" />
+          <Property Name="Collateral_Secure4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type4" Type="text" />
+          <Property Name="Collateral_Secure5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type5" Type="text" />
+          <Property Name="Collateral_Secure6" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type6" Type="text" />
+          <Property Name="Collateral_Secure7" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type7" Type="text" />
+          <Property Name="Collateral_Secure8" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type8" Type="text" />
+          <Property Name="Collateral_Secure9" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type9" Type="text" />
+          <Property Name="Collateral_Secure10" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type10" Type="text" />
+          <Property Name="Repayment_Source" Type="text" Nullable="false" />
+          <Property Name="Syndication" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Syndication_Status" Type="nvarchar" MaxLength="6" />
+          <Property Name="Syndication_Reference_Number" Type="text" />
+          <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Inputter_Date_Stamp" Type="datetime" />
+          <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Modifier_Date_Stamp" Type="datetime" />
+          <Property Name="CRMS_Ref_Number" Type="text" />
+          <Property Name="Loan_Ref_Number" Type="text" />
+        </EntityType>
+        <EntityType Name="CRMS_200">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Customer_Name" Type="text" Nullable="false" />
+          <Property Name="Government_Mda_Tin" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Legal_Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Type" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines_Subsector" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Limit" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Outstanding_Amount" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type1" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Fee_Amount1" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type2" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount2" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type3" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount3" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type4" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount4" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type5" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount5" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type6" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount6" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type7" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount7" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type8" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount8" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type9" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount9" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type10" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount10" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type11" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount11" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type12" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount12" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type13" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount13" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type14" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount14" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type15" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount15" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type16" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount16" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Effective_Date" Type="date" Nullable="false" />
+          <Property Name="Tenor" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Expiry_Date" Type="date" Nullable="false" />
+          <Property Name="Repayment_Agreement_Mode" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Performance_Repayment_Status" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Interest_Rate" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Specialised_Loan" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Specialised_Loan_Period" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Collateral_Present1" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Collateral_Secure1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type1" Type="text" />
+          <Property Name="Collateral_Secure2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type2" Type="text" />
+          <Property Name="Collateral_Secure3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type3" Type="text" />
+          <Property Name="Collateral_Secure4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type4" Type="text" />
+          <Property Name="Collateral_Secure5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type5" Type="text" />
+          <Property Name="Collateral_Secure6" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type6" Type="text" />
+          <Property Name="Collateral_Secure7" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type7" Type="text" />
+          <Property Name="Collateral_Secure8" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type8" Type="text" />
+          <Property Name="Collateral_Secure9" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type9" Type="text" />
+          <Property Name="Collateral_Secure10" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type10" Type="text" />
+          <Property Name="Repayment_Source" Type="text" Nullable="false" />
+          <Property Name="Syndication" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Syndication_Status" Type="nvarchar" MaxLength="6" />
+          <Property Name="Syndication_Reference_Number" Type="text" />
+          <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Inputter_Date_Stamp" Type="datetime" />
+          <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Modifier_Date_Stamp" Type="datetime" />
+          <Property Name="CRMS_Ref_Number" Type="text" />
+          <Property Name="Loan_Ref_Number" Type="text" />
+        </EntityType>
+        <EntityType Name="CRMS_300">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Customer_Name" Type="text" Nullable="false" />
+          <Property Name="Unique_Identifcation_Type" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Unique_Identifcation_Number" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Credit_Type" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines_Subsector" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Limit" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Outstanding_Amount" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type1" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Fee_Amount1" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type2" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount2" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type3" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount3" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type4" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount4" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type5" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount5" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type6" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount6" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type7" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount7" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type8" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount8" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type9" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount9" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type10" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount10" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type11" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount11" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type12" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount12" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type13" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount13" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type14" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount14" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type15" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount15" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type16" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount16" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Effective_Date" Type="date" Nullable="false" />
+          <Property Name="Tenor" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Expiry_Date" Type="date" Nullable="false" />
+          <Property Name="Repayment_Agreement_Mode" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Interest_Rate" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Beneficiary_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Location_of_Beneficiary" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Relationship_Type" Type="text" Nullable="false" />
+          <Property Name="Company_Size" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Funding_Source_Category" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="ECCI_Number" Type="nvarchar" MaxLength="20" />
+          <Property Name="Funding_Source" Type="text" Nullable="false" />
+          <Property Name="Legal_Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Classification_By_Business_Lines" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Classification_By_Business_Lines_Subsector" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Specialised_Loan" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Specialised_Loan_Period" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Director_Id_Type1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email1" Type="text" />
+          <Property Name="Director_Id_Type2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number2" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email2" Type="text" />
+          <Property Name="Director_Id_Type3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number3" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email3" Type="text" />
+          <Property Name="Director_Id_Type4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number4" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email4" Type="text" />
+          <Property Name="Director_Id_Type5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number5" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email5" Type="text" />
+          <Property Name="Syndication" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Syndication_Status" Type="nvarchar" MaxLength="6" />
+          <Property Name="Syndication_Reference_Number" Type="text" />
+          <Property Name="Collateral_Present1" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Collateral_Secure1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type1" Type="text" />
+          <Property Name="Address_of_Security1" Type="text" />
+          <Property Name="Owner_of_Security1" Type="text" />
+          <Property Name="Security_Id_Type1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type2" Type="text" />
+          <Property Name="Address_of_Security2" Type="text" />
+          <Property Name="Owner_of_Security2" Type="text" />
+          <Property Name="Security_Id_Type2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number2" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type3" Type="text" />
+          <Property Name="Address_of_Security3" Type="text" />
+          <Property Name="Owner_of_Security3" Type="text" />
+          <Property Name="Security_Id_Type3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number3" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type4" Type="text" />
+          <Property Name="Address_of_Security4" Type="text" />
+          <Property Name="Owner_of_Security4" Type="text" />
+          <Property Name="Security_Id_Type4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number4" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type5" Type="text" />
+          <Property Name="Address_of_Security5" Type="text" />
+          <Property Name="Owner_of_Security5" Type="text" />
+          <Property Name="Security_Id_Type5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number5" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure6" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type6" Type="text" />
+          <Property Name="Address_of_Security6" Type="text" />
+          <Property Name="Owner_of_Security6" Type="text" />
+          <Property Name="Security_Id_Type6" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number6" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure7" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type7" Type="text" />
+          <Property Name="Address_of_Security7" Type="text" />
+          <Property Name="Owner_of_Security7" Type="text" />
+          <Property Name="Security_Id_Type7" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number7" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure8" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type8" Type="text" />
+          <Property Name="Address_of_Security8" Type="text" />
+          <Property Name="Owner_of_Security8" Type="text" />
+          <Property Name="Security_Id_Type8" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number8" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure9" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type9" Type="text" />
+          <Property Name="Address_of_Security9" Type="text" />
+          <Property Name="Owner_of_Security9" Type="text" />
+          <Property Name="Security_Id_Type9" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number9" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure10" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type10" Type="text" />
+          <Property Name="Address_of_Security10" Type="text" />
+          <Property Name="Owner_of_Security10" Type="text" />
+          <Property Name="Security_Id_Type10" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number10" Type="nvarchar" MaxLength="15" />
+          <Property Name="Guarantee1" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Guarantee_Type1" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed1" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type2" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number2" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed2" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type3" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number3" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed3" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type4" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number4" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed4" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type5" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number5" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed5" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Inputter_Date_Stamp" Type="datetime" />
+          <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Modifier_Date_Stamp" Type="datetime" />
+          <Property Name="CRMS_Ref_Number" Type="text" />
+          <Property Name="Loan_Ref_Number" Type="text" />
+        </EntityType>
+        <EntityType Name="CRMS_400A">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Customer_Name" Type="text" Nullable="false" />
+          <Property Name="Unique_Identifcation_Type" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Unique_Identifcation_Number" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="CRMS_Reference_Number" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Effective_Date" Type="date" Nullable="false" />
+          <Property Name="Tenor" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Expiry_Date" Type="date" Nullable="false" />
+          <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Inputter_Date_Stamp" Type="datetime" />
+          <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Modifier_Date_Stamp" Type="datetime" />
+          <Property Name="CRMS_Ref_Number" Type="text" />
+          <Property Name="Loan_Ref_Number" Type="text" />
+        </EntityType>
+        <EntityType Name="CRMS_400B">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Customer_Name" Type="text" Nullable="false" />
+          <Property Name="Unique_Identifcation_Type" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Unique_Identifcation_Number" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="CRMS_Reference_Number" Type="text" Nullable="false" />
+          <Property Name="Credit_Type" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Limit" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Outstanding_Amount" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type1" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Fee_Amount1" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type2" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount2" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type3" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount3" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type4" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount4" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type5" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount5" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type6" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount6" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type7" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount7" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type8" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount8" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type9" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount9" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type10" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount10" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type11" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount11" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type12" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount12" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type13" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount13" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type14" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount14" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type15" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount15" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type16" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount16" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Effective_Date" Type="date" Nullable="false" />
+          <Property Name="Tenor" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Expiry_Date" Type="date" Nullable="false" />
+          <Property Name="Repayment_Agreement_Mode" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Performance_Repayment_Status" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Reason_For_Restructuring" Type="text" Nullable="false" />
+          <Property Name="Interest_Rate" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Beneficiary_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Location_of_Beneficiary" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Relationship_Type" Type="text" Nullable="false" />
+          <Property Name="Funding_Source_Category" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="ECCI_Number" Type="nvarchar" MaxLength="20" />
+          <Property Name="Funding_Source" Type="text" Nullable="false" />
+          <Property Name="Specialised_Loan" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Specialised_Loan_Period" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Director_Id_Type1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email1" Type="text" />
+          <Property Name="Director_Id_Type2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number2" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email2" Type="text" />
+          <Property Name="Director_Id_Type3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number3" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email3" Type="text" />
+          <Property Name="Director_Id_Type4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number4" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email4" Type="text" />
+          <Property Name="Director_Id_Type5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number5" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email5" Type="text" />
+          <Property Name="Collateral_Present1" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Collateral_Secure1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type1" Type="text" />
+          <Property Name="Address_of_Security1" Type="text" />
+          <Property Name="Owner_of_Security1" Type="text" />
+          <Property Name="Security_Id_Type1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type2" Type="text" />
+          <Property Name="Address_of_Security2" Type="text" />
+          <Property Name="Owner_of_Security2" Type="text" />
+          <Property Name="Security_Id_Type2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number2" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type3" Type="text" />
+          <Property Name="Address_of_Security3" Type="text" />
+          <Property Name="Owner_of_Security3" Type="text" />
+          <Property Name="Security_Id_Type3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number3" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type4" Type="text" />
+          <Property Name="Address_of_Security4" Type="text" />
+          <Property Name="Owner_of_Security4" Type="text" />
+          <Property Name="Security_Id_Type4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number4" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type5" Type="text" />
+          <Property Name="Address_of_Security5" Type="text" />
+          <Property Name="Owner_of_Security5" Type="text" />
+          <Property Name="Security_Id_Type5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number5" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure6" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type6" Type="text" />
+          <Property Name="Address_of_Security6" Type="text" />
+          <Property Name="Owner_of_Security6" Type="text" />
+          <Property Name="Security_Id_Type6" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number6" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure7" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type7" Type="text" />
+          <Property Name="Address_of_Security7" Type="text" />
+          <Property Name="Owner_of_Security7" Type="text" />
+          <Property Name="Security_Id_Type7" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number7" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure8" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type8" Type="text" />
+          <Property Name="Address_of_Security8" Type="text" />
+          <Property Name="Owner_of_Security8" Type="text" />
+          <Property Name="Security_Id_Type8" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number8" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure9" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type9" Type="text" />
+          <Property Name="Address_of_Security9" Type="text" />
+          <Property Name="Owner_of_Security9" Type="text" />
+          <Property Name="Security_Id_Type9" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number9" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure10" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type10" Type="text" />
+          <Property Name="Address_of_Security10" Type="text" />
+          <Property Name="Owner_of_Security10" Type="text" />
+          <Property Name="Security_Id_Type10" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number10" Type="nvarchar" MaxLength="15" />
+          <Property Name="Guarantee1" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Guarantee_Type1" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed1" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type2" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number2" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed2" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type3" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number3" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed3" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type4" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number4" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed4" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type5" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number5" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed5" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Inputter_Date_Stamp" Type="datetime" />
+          <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Modifier_Date_Stamp" Type="datetime" />
+          <Property Name="CRMS_Ref_Number" Type="text" />
+          <Property Name="Loan_Ref_Number" Type="text" />
+        </EntityType>
+        <EntityType Name="CRMS_600">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Customer_Name" Type="text" Nullable="false" />
+          <Property Name="Syndication_Reference_Number" Type="text" />
+          <Property Name="Syndication_Name" Type="text" Nullable="false" />
+          <Property Name="Syndication_Total_Amount" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Participating_Bank_COde" Type="text" Nullable="false" />
+          <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Inputter_Date_Stamp" Type="datetime" />
+          <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Modifier_Date_Stamp" Type="datetime" />
+          <Property Name="CRMS_Ref_Number" Type="text" />
+          <Property Name="Loan_Ref_Number" Type="text" />
+        </EntityType>
+        <EntityType Name="CRMS_700">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Customer_Name" Type="text" Nullable="false" />
+          <Property Name="Unique_Identifcation_Type" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Unique_Identifcation_Number" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="CRMS_Reference_Number" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines_Subsector" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Fee_Type1" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Fee_Amount1" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type2" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount2" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type3" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount3" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type4" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount4" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type5" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount5" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type6" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount6" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type7" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount7" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type8" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount8" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type9" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount9" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type10" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount10" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type11" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount11" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type12" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount12" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type13" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount13" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type14" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount14" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type15" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount15" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type16" Type="nvarchar" MaxLength="5" />
+          <Property Name="Fee_Amount16" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Tenor" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Beneficiary_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Location_of_Beneficiary" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Relationship_Type" Type="text" Nullable="false" />
+          <Property Name="Company_Size" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Funding_Source_Category" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="ECCI_Number" Type="nvarchar" MaxLength="20" />
+          <Property Name="Funding_Source" Type="text" Nullable="false" />
+          <Property Name="Legal_Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Classification_By_Business_Lines" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Classification_By_Business_Lines_Subsector" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Specialised_Loan" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Specialised_Loan_Period" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="Director_Id_Type1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email1" Type="text" />
+          <Property Name="Director_Id_Type2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number2" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email2" Type="text" />
+          <Property Name="Director_Id_Type3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number3" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email3" Type="text" />
+          <Property Name="Director_Id_Type4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number4" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email4" Type="text" />
+          <Property Name="Director_Id_Type5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Director_Id_Number5" Type="nvarchar" MaxLength="15" />
+          <Property Name="Director_Id_Email5" Type="text" />
+          <Property Name="Syndication" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Syndication_Status" Type="nvarchar" MaxLength="6" />
+          <Property Name="Syndication_Name" Type="text" />
+          <Property Name="Syndication_Total_Amount" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Syndication_Reference_Number" Type="text" />
+          <Property Name="Collateral_Present1" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Collateral_Secure1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type1" Type="text" />
+          <Property Name="Address_of_Security1" Type="text" />
+          <Property Name="Owner_of_Security1" Type="text" />
+          <Property Name="Security_Id_Type1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type2" Type="text" />
+          <Property Name="Address_of_Security2" Type="text" />
+          <Property Name="Owner_of_Security2" Type="text" />
+          <Property Name="Security_Id_Type2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number2" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type3" Type="text" />
+          <Property Name="Address_of_Security3" Type="text" />
+          <Property Name="Owner_of_Security3" Type="text" />
+          <Property Name="Security_Id_Type3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number3" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type4" Type="text" />
+          <Property Name="Address_of_Security4" Type="text" />
+          <Property Name="Owner_of_Security4" Type="text" />
+          <Property Name="Security_Id_Type4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number4" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type5" Type="text" />
+          <Property Name="Address_of_Security5" Type="text" />
+          <Property Name="Owner_of_Security5" Type="text" />
+          <Property Name="Security_Id_Type5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number5" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure6" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type6" Type="text" />
+          <Property Name="Address_of_Security6" Type="text" />
+          <Property Name="Owner_of_Security6" Type="text" />
+          <Property Name="Security_Id_Type6" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number6" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure7" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type7" Type="text" />
+          <Property Name="Address_of_Security7" Type="text" />
+          <Property Name="Owner_of_Security7" Type="text" />
+          <Property Name="Security_Id_Type7" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number7" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure8" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type8" Type="text" />
+          <Property Name="Address_of_Security8" Type="text" />
+          <Property Name="Owner_of_Security8" Type="text" />
+          <Property Name="Security_Id_Type8" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number8" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure9" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type9" Type="text" />
+          <Property Name="Address_of_Security9" Type="text" />
+          <Property Name="Owner_of_Security9" Type="text" />
+          <Property Name="Security_Id_Type9" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number9" Type="nvarchar" MaxLength="15" />
+          <Property Name="Collateral_Secure10" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Type10" Type="text" />
+          <Property Name="Address_of_Security10" Type="text" />
+          <Property Name="Owner_of_Security10" Type="text" />
+          <Property Name="Security_Id_Type10" Type="nvarchar" MaxLength="3" />
+          <Property Name="Security_Id_Number10" Type="nvarchar" MaxLength="15" />
+          <Property Name="Guarantee1" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Guarantee_Type1" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type1" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed1" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type2" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type2" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number2" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed2" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type3" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type3" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number3" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed3" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type4" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type4" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number4" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed4" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type5" Type="nvarchar" MaxLength="20" />
+          <Property Name="Guarantor_Id_Type5" Type="nvarchar" MaxLength="3" />
+          <Property Name="Guarantor_Id_Number5" Type="nvarchar" MaxLength="15" />
+          <Property Name="Amount_Guaranteed5" Type="decimal" Precision="32" Scale="2" />
+          <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Inputter_Date_Stamp" Type="datetime" />
+          <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Modifier_Date_Stamp" Type="datetime" />
+          <Property Name="CRMS_Ref_Number" Type="text" />
+          <Property Name="Loan_Ref_Number" Type="text" />
+        </EntityType>
+        <EntityContainer Name="CRMSModelStoreContainer">
+          <EntitySet Name="CRMS_100" EntityType="Self.CRMS_100" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRMS_200" EntityType="Self.CRMS_200" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRMS_300" EntityType="Self.CRMS_300" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRMS_400A" EntityType="Self.CRMS_400A" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRMS_400B" EntityType="Self.CRMS_400B" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRMS_600" EntityType="Self.CRMS_600" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRMS_700" EntityType="Self.CRMS_700" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CRMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CRMS_100">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Government_Code" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Legal_Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines_Subsector" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Limit" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Outstanding_Amount" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type1" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fee_Amount1" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount2" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type3" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount3" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type4" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount4" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type5" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount5" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type6" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount6" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type7" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount7" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type8" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount8" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type9" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount9" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type10" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount10" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type11" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount11" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type12" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount12" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type13" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount13" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type14" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount14" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type15" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount15" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type16" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount16" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Effective_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Tenor" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Expiry_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Repayment_Agreement_Mode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Specialised_Loan" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Specialised_Loan_Period" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Interest_Rate" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Collateral_Present1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Collateral_Secure1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure6" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure7" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure8" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure9" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure10" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Repayment_Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Syndication" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Syndication_Status" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Syndication_Reference_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Inputter_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Inputter_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="Modifier_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Modifier_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="CRMS_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Loan_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CRMS_200">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Government_Mda_Tin" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Legal_Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines_Subsector" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Limit" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Outstanding_Amount" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type1" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fee_Amount1" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount2" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type3" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount3" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type4" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount4" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type5" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount5" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type6" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount6" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type7" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount7" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type8" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount8" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type9" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount9" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type10" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount10" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type11" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount11" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type12" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount12" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type13" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount13" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type14" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount14" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type15" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount15" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type16" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount16" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Effective_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Tenor" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Expiry_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Repayment_Agreement_Mode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Performance_Repayment_Status" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Interest_Rate" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Specialised_Loan" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Specialised_Loan_Period" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Collateral_Present1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Collateral_Secure1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure6" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure7" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure8" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure9" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Secure10" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Repayment_Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Syndication" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Syndication_Status" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Syndication_Reference_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Inputter_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Inputter_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="Modifier_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Modifier_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="CRMS_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Loan_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CRMS_300">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Unique_Identifcation_Type" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Unique_Identifcation_Number" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Purpose_By_Business_Lines_Subsector" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Limit" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Outstanding_Amount" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type1" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fee_Amount1" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount2" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type3" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount3" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type4" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount4" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type5" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount5" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type6" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount6" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type7" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount7" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type8" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount8" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type9" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount9" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type10" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount10" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type11" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount11" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type12" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount12" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type13" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount13" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type14" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount14" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type15" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount15" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type16" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount16" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Effective_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Tenor" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Expiry_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Repayment_Agreement_Mode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Interest_Rate" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Beneficiary_Account_Number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Location_of_Beneficiary" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Relationship_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company_Size" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Funding_Source_Category" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ECCI_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Funding_Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Legal_Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Classification_By_Business_Lines" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Classification_By_Business_Lines_Subsector" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Specialised_Loan" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Specialised_Loan_Period" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Director_Id_Type1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id_Type2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id_Type3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id_Type4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id_Type5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number5" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Syndication" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Syndication_Status" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Syndication_Reference_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Present1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Collateral_Secure1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number5" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure6" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type6" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number6" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure7" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type7" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number7" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure8" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type8" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number8" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure9" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type9" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number9" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure10" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type10" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number10" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantee1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Guarantee_Type1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed1" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed2" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed3" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type4" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed4" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type5" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number5" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed5" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Inputter_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Inputter_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="Modifier_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Modifier_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="CRMS_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Loan_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CRMS_400A">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Unique_Identifcation_Type" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Unique_Identifcation_Number" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CRMS_Reference_Number" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Effective_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Tenor" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Expiry_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Inputter_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Inputter_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="Modifier_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Modifier_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="CRMS_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Loan_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CRMS_400B">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Unique_Identifcation_Type" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Unique_Identifcation_Number" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CRMS_Reference_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Credit_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Limit" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Outstanding_Amount" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type1" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fee_Amount1" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Fee_Type2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount2" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type3" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount3" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type4" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount4" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type5" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount5" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type6" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount6" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type7" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount7" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type8" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount8" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type9" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount9" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type10" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount10" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type11" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount11" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type12" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount12" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type13" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount13" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type14" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount14" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type15" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount15" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type16" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount16" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Effective_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Tenor" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="Expiry_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Repayment_Agreement_Mode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Performance_Repayment_Status" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Reason_For_Restructuring" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Interest_Rate" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Beneficiary_Account_Number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Location_of_Beneficiary" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Relationship_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Funding_Source_Category" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ECCI_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Funding_Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Specialised_Loan" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Specialised_Loan_Period" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Director_Id_Type1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id_Type2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id_Type3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id_Type4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id_Type5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number5" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Present1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Collateral_Secure1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number5" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure6" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type6" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number6" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure7" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type7" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number7" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure8" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type8" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number8" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure9" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type9" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number9" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure10" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type10" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number10" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantee1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Guarantee_Type1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed1" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed2" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed3" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type4" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed4" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type5" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number5" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed5" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Inputter_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Inputter_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="Modifier_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Modifier_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="CRMS_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Loan_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CRMS_600">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Account_Number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Syndication_Reference_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Syndication_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Syndication_Total_Amount" Type="Decimal" Precision="32" Scale="2" Nullable="false" />
+          <Property Name="Participating_Bank_COde" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Inputter_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Inputter_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="Modifier_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Modifier_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="CRMS_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Loan_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CRMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CRMS_100" EntityType="Self.CRMS_100" />
+          <EntitySet Name="CRMS_200" EntityType="Self.CRMS_200" />
+          <EntitySet Name="CRMS_300" EntityType="Self.CRMS_300" />
+          <EntitySet Name="CRMS_400A" EntityType="Self.CRMS_400A" />
+          <EntitySet Name="CRMS_400B" EntityType="Self.CRMS_400B" />
+          <EntitySet Name="CRMS_600" EntityType="Self.CRMS_600" />
+          <EntitySet Name="CRMS_700" EntityType="CRMSModel.CRMS_700" />
+        </EntityContainer>
+        <EntityType Name="CRMS_700">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="Customer_ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Customer_Account_Number" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Customer_Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Unique_Identifcation_Type" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Unique_Identifcation_Number" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CRMS_Reference_Number" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Credit_Purpose_By_Business_Lines" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Credit_Purpose_By_Business_Lines_Subsector" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Type1" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount1" Type="Decimal" Nullable="false" Precision="32" Scale="2" />
+          <Property Name="Fee_Type2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount2" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type3" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount3" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type4" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount4" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type5" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount5" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type6" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount6" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type7" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount7" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type8" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount8" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type9" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount9" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type10" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount10" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type11" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount11" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type12" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount12" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type13" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount13" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type14" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount14" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type15" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount15" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Fee_Type16" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Fee_Amount16" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Tenor" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
+          <Property Name="Beneficiary_Account_Number" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Location_of_Beneficiary" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Relationship_Type" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Company_Size" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Funding_Source_Category" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="ECCI_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Funding_Source" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Legal_Status" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Classification_By_Business_Lines" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Classification_By_Business_Lines_Subsector" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Specialised_Loan" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Specialised_Loan_Period" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="Director_Id_Type1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id_Type2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id_Type3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id_Type4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id_Type5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Number5" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Id_Email5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Syndication" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Syndication_Status" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Syndication_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Syndication_Total_Amount" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Syndication_Reference_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Collateral_Present1" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number5" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure6" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type6" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number6" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure7" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type7" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number7" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure8" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type8" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number8" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure9" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type9" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number9" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Collateral_Secure10" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Type10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address_of_Security10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_of_Security10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Id_Type10" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Security_Id_Number10" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantee1" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantee_Type1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed1" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed2" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed3" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type4" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type4" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed4" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Guarantee_Type5" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Type5" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Guarantor_Id_Number5" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount_Guaranteed5" Type="Decimal" Precision="32" Scale="2" />
+          <Property Name="Inputter_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Inputter_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="Modifier_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Modifier_Date_Stamp" Type="DateTime" Precision="3" />
+          <Property Name="CRMS_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Loan_Ref_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CRMSModelStoreContainer" CdmEntityContainer="CRMSEntities">
+          <EntitySetMapping Name="CRMS_100">
+            <EntityTypeMapping TypeName="CRMSModel.CRMS_100">
+              <MappingFragment StoreEntitySet="CRMS_100">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Customer_Account_Number" ColumnName="Customer_Account_Number" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Government_Code" ColumnName="Government_Code" />
+                <ScalarProperty Name="Legal_Status" ColumnName="Legal_Status" />
+                <ScalarProperty Name="Credit_Type" ColumnName="Credit_Type" />
+                <ScalarProperty Name="Credit_Purpose_By_Business_Lines" ColumnName="Credit_Purpose_By_Business_Lines" />
+                <ScalarProperty Name="Credit_Purpose_By_Business_Lines_Subsector" ColumnName="Credit_Purpose_By_Business_Lines_Subsector" />
+                <ScalarProperty Name="Credit_Limit" ColumnName="Credit_Limit" />
+                <ScalarProperty Name="Outstanding_Amount" ColumnName="Outstanding_Amount" />
+                <ScalarProperty Name="Fee_Type1" ColumnName="Fee_Type1" />
+                <ScalarProperty Name="Fee_Amount1" ColumnName="Fee_Amount1" />
+                <ScalarProperty Name="Fee_Type2" ColumnName="Fee_Type2" />
+                <ScalarProperty Name="Fee_Amount2" ColumnName="Fee_Amount2" />
+                <ScalarProperty Name="Fee_Type3" ColumnName="Fee_Type3" />
+                <ScalarProperty Name="Fee_Amount3" ColumnName="Fee_Amount3" />
+                <ScalarProperty Name="Fee_Type4" ColumnName="Fee_Type4" />
+                <ScalarProperty Name="Fee_Amount4" ColumnName="Fee_Amount4" />
+                <ScalarProperty Name="Fee_Type5" ColumnName="Fee_Type5" />
+                <ScalarProperty Name="Fee_Amount5" ColumnName="Fee_Amount5" />
+                <ScalarProperty Name="Fee_Type6" ColumnName="Fee_Type6" />
+                <ScalarProperty Name="Fee_Amount6" ColumnName="Fee_Amount6" />
+                <ScalarProperty Name="Fee_Type7" ColumnName="Fee_Type7" />
+                <ScalarProperty Name="Fee_Amount7" ColumnName="Fee_Amount7" />
+                <ScalarProperty Name="Fee_Type8" ColumnName="Fee_Type8" />
+                <ScalarProperty Name="Fee_Amount8" ColumnName="Fee_Amount8" />
+                <ScalarProperty Name="Fee_Type9" ColumnName="Fee_Type9" />
+                <ScalarProperty Name="Fee_Amount9" ColumnName="Fee_Amount9" />
+                <ScalarProperty Name="Fee_Type10" ColumnName="Fee_Type10" />
+                <ScalarProperty Name="Fee_Amount10" ColumnName="Fee_Amount10" />
+                <ScalarProperty Name="Fee_Type11" ColumnName="Fee_Type11" />
+                <ScalarProperty Name="Fee_Amount11" ColumnName="Fee_Amount11" />
+                <ScalarProperty Name="Fee_Type12" ColumnName="Fee_Type12" />
+                <ScalarProperty Name="Fee_Amount12" ColumnName="Fee_Amount12" />
+                <ScalarProperty Name="Fee_Type13" ColumnName="Fee_Type13" />
+                <ScalarProperty Name="Fee_Amount13" ColumnName="Fee_Amount13" />
+                <ScalarProperty Name="Fee_Type14" ColumnName="Fee_Type14" />
+                <ScalarProperty Name="Fee_Amount14" ColumnName="Fee_Amount14" />
+                <ScalarProperty Name="Fee_Type15" ColumnName="Fee_Type15" />
+                <ScalarProperty Name="Fee_Amount15" ColumnName="Fee_Amount15" />
+                <ScalarProperty Name="Fee_Type16" ColumnName="Fee_Type16" />
+                <ScalarProperty Name="Fee_Amount16" ColumnName="Fee_Amount16" />
+                <ScalarProperty Name="Effective_Date" ColumnName="Effective_Date" />
+                <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+                <ScalarProperty Name="Expiry_Date" ColumnName="Expiry_Date" />
+                <ScalarProperty Name="Repayment_Agreement_Mode" ColumnName="Repayment_Agreement_Mode" />
+                <ScalarProperty Name="Specialised_Loan" ColumnName="Specialised_Loan" />
+                <ScalarProperty Name="Specialised_Loan_Period" ColumnName="Specialised_Loan_Period" />
+                <ScalarProperty Name="Interest_Rate" ColumnName="Interest_Rate" />
+                <ScalarProperty Name="Collateral_Present1" ColumnName="Collateral_Present1" />
+                <ScalarProperty Name="Collateral_Secure1" ColumnName="Collateral_Secure1" />
+                <ScalarProperty Name="Security_Type1" ColumnName="Security_Type1" />
+                <ScalarProperty Name="Collateral_Secure2" ColumnName="Collateral_Secure2" />
+                <ScalarProperty Name="Security_Type2" ColumnName="Security_Type2" />
+                <ScalarProperty Name="Collateral_Secure3" ColumnName="Collateral_Secure3" />
+                <ScalarProperty Name="Security_Type3" ColumnName="Security_Type3" />
+                <ScalarProperty Name="Collateral_Secure4" ColumnName="Collateral_Secure4" />
+                <ScalarProperty Name="Security_Type4" ColumnName="Security_Type4" />
+                <ScalarProperty Name="Collateral_Secure5" ColumnName="Collateral_Secure5" />
+                <ScalarProperty Name="Security_Type5" ColumnName="Security_Type5" />
+                <ScalarProperty Name="Collateral_Secure6" ColumnName="Collateral_Secure6" />
+                <ScalarProperty Name="Security_Type6" ColumnName="Security_Type6" />
+                <ScalarProperty Name="Collateral_Secure7" ColumnName="Collateral_Secure7" />
+                <ScalarProperty Name="Security_Type7" ColumnName="Security_Type7" />
+                <ScalarProperty Name="Collateral_Secure8" ColumnName="Collateral_Secure8" />
+                <ScalarProperty Name="Security_Type8" ColumnName="Security_Type8" />
+                <ScalarProperty Name="Collateral_Secure9" ColumnName="Collateral_Secure9" />
+                <ScalarProperty Name="Security_Type9" ColumnName="Security_Type9" />
+                <ScalarProperty Name="Collateral_Secure10" ColumnName="Collateral_Secure10" />
+                <ScalarProperty Name="Security_Type10" ColumnName="Security_Type10" />
+                <ScalarProperty Name="Repayment_Source" ColumnName="Repayment_Source" />
+                <ScalarProperty Name="Syndication" ColumnName="Syndication" />
+                <ScalarProperty Name="Syndication_Status" ColumnName="Syndication_Status" />
+                <ScalarProperty Name="Syndication_Reference_Number" ColumnName="Syndication_Reference_Number" />
+                <ScalarProperty Name="Inputter_ID" ColumnName="Inputter_ID" />
+                <ScalarProperty Name="Inputter_Date_Stamp" ColumnName="Inputter_Date_Stamp" />
+                <ScalarProperty Name="Modifier_ID" ColumnName="Modifier_ID" />
+                <ScalarProperty Name="Modifier_Date_Stamp" ColumnName="Modifier_Date_Stamp" />
+                <ScalarProperty Name="CRMS_Ref_Number" ColumnName="CRMS_Ref_Number" />
+                <ScalarProperty Name="Loan_Ref_Number" ColumnName="Loan_Ref_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRMS_200">
+            <EntityTypeMapping TypeName="CRMSModel.CRMS_200">
+              <MappingFragment StoreEntitySet="CRMS_200">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Customer_Account_Number" ColumnName="Customer_Account_Number" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Government_Mda_Tin" ColumnName="Government_Mda_Tin" />
+                <ScalarProperty Name="Legal_Status" ColumnName="Legal_Status" />
+                <ScalarProperty Name="Credit_Type" ColumnName="Credit_Type" />
+                <ScalarProperty Name="Credit_Purpose_By_Business_Lines" ColumnName="Credit_Purpose_By_Business_Lines" />
+                <ScalarProperty Name="Credit_Purpose_By_Business_Lines_Subsector" ColumnName="Credit_Purpose_By_Business_Lines_Subsector" />
+                <ScalarProperty Name="Credit_Limit" ColumnName="Credit_Limit" />
+                <ScalarProperty Name="Outstanding_Amount" ColumnName="Outstanding_Amount" />
+                <ScalarProperty Name="Fee_Type1" ColumnName="Fee_Type1" />
+                <ScalarProperty Name="Fee_Amount1" ColumnName="Fee_Amount1" />
+                <ScalarProperty Name="Fee_Type2" ColumnName="Fee_Type2" />
+                <ScalarProperty Name="Fee_Amount2" ColumnName="Fee_Amount2" />
+                <ScalarProperty Name="Fee_Type3" ColumnName="Fee_Type3" />
+                <ScalarProperty Name="Fee_Amount3" ColumnName="Fee_Amount3" />
+                <ScalarProperty Name="Fee_Type4" ColumnName="Fee_Type4" />
+                <ScalarProperty Name="Fee_Amount4" ColumnName="Fee_Amount4" />
+                <ScalarProperty Name="Fee_Type5" ColumnName="Fee_Type5" />
+                <ScalarProperty Name="Fee_Amount5" ColumnName="Fee_Amount5" />
+                <ScalarProperty Name="Fee_Type6" ColumnName="Fee_Type6" />
+                <ScalarProperty Name="Fee_Amount6" ColumnName="Fee_Amount6" />
+                <ScalarProperty Name="Fee_Type7" ColumnName="Fee_Type7" />
+                <ScalarProperty Name="Fee_Amount7" ColumnName="Fee_Amount7" />
+                <ScalarProperty Name="Fee_Type8" ColumnName="Fee_Type8" />
+                <ScalarProperty Name="Fee_Amount8" ColumnName="Fee_Amount8" />
+                <ScalarProperty Name="Fee_Type9" ColumnName="Fee_Type9" />
+                <ScalarProperty Name="Fee_Amount9" ColumnName="Fee_Amount9" />
+                <ScalarProperty Name="Fee_Type10" ColumnName="Fee_Type10" />
+                <ScalarProperty Name="Fee_Amount10" ColumnName="Fee_Amount10" />
+                <ScalarProperty Name="Fee_Type11" ColumnName="Fee_Type11" />
+                <ScalarProperty Name="Fee_Amount11" ColumnName="Fee_Amount11" />
+                <ScalarProperty Name="Fee_Type12" ColumnName="Fee_Type12" />
+                <ScalarProperty Name="Fee_Amount12" ColumnName="Fee_Amount12" />
+                <ScalarProperty Name="Fee_Type13" ColumnName="Fee_Type13" />
+                <ScalarProperty Name="Fee_Amount13" ColumnName="Fee_Amount13" />
+                <ScalarProperty Name="Fee_Type14" ColumnName="Fee_Type14" />
+                <ScalarProperty Name="Fee_Amount14" ColumnName="Fee_Amount14" />
+                <ScalarProperty Name="Fee_Type15" ColumnName="Fee_Type15" />
+                <ScalarProperty Name="Fee_Amount15" ColumnName="Fee_Amount15" />
+                <ScalarProperty Name="Fee_Type16" ColumnName="Fee_Type16" />
+                <ScalarProperty Name="Fee_Amount16" ColumnName="Fee_Amount16" />
+                <ScalarProperty Name="Effective_Date" ColumnName="Effective_Date" />
+                <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+                <ScalarProperty Name="Expiry_Date" ColumnName="Expiry_Date" />
+                <ScalarProperty Name="Repayment_Agreement_Mode" ColumnName="Repayment_Agreement_Mode" />
+                <ScalarProperty Name="Performance_Repayment_Status" ColumnName="Performance_Repayment_Status" />
+                <ScalarProperty Name="Interest_Rate" ColumnName="Interest_Rate" />
+                <ScalarProperty Name="Specialised_Loan" ColumnName="Specialised_Loan" />
+                <ScalarProperty Name="Specialised_Loan_Period" ColumnName="Specialised_Loan_Period" />
+                <ScalarProperty Name="Collateral_Present1" ColumnName="Collateral_Present1" />
+                <ScalarProperty Name="Collateral_Secure1" ColumnName="Collateral_Secure1" />
+                <ScalarProperty Name="Security_Type1" ColumnName="Security_Type1" />
+                <ScalarProperty Name="Collateral_Secure2" ColumnName="Collateral_Secure2" />
+                <ScalarProperty Name="Security_Type2" ColumnName="Security_Type2" />
+                <ScalarProperty Name="Collateral_Secure3" ColumnName="Collateral_Secure3" />
+                <ScalarProperty Name="Security_Type3" ColumnName="Security_Type3" />
+                <ScalarProperty Name="Collateral_Secure4" ColumnName="Collateral_Secure4" />
+                <ScalarProperty Name="Security_Type4" ColumnName="Security_Type4" />
+                <ScalarProperty Name="Collateral_Secure5" ColumnName="Collateral_Secure5" />
+                <ScalarProperty Name="Security_Type5" ColumnName="Security_Type5" />
+                <ScalarProperty Name="Collateral_Secure6" ColumnName="Collateral_Secure6" />
+                <ScalarProperty Name="Security_Type6" ColumnName="Security_Type6" />
+                <ScalarProperty Name="Collateral_Secure7" ColumnName="Collateral_Secure7" />
+                <ScalarProperty Name="Security_Type7" ColumnName="Security_Type7" />
+                <ScalarProperty Name="Collateral_Secure8" ColumnName="Collateral_Secure8" />
+                <ScalarProperty Name="Security_Type8" ColumnName="Security_Type8" />
+                <ScalarProperty Name="Collateral_Secure9" ColumnName="Collateral_Secure9" />
+                <ScalarProperty Name="Security_Type9" ColumnName="Security_Type9" />
+                <ScalarProperty Name="Collateral_Secure10" ColumnName="Collateral_Secure10" />
+                <ScalarProperty Name="Security_Type10" ColumnName="Security_Type10" />
+                <ScalarProperty Name="Repayment_Source" ColumnName="Repayment_Source" />
+                <ScalarProperty Name="Syndication" ColumnName="Syndication" />
+                <ScalarProperty Name="Syndication_Status" ColumnName="Syndication_Status" />
+                <ScalarProperty Name="Syndication_Reference_Number" ColumnName="Syndication_Reference_Number" />
+                <ScalarProperty Name="Inputter_ID" ColumnName="Inputter_ID" />
+                <ScalarProperty Name="Inputter_Date_Stamp" ColumnName="Inputter_Date_Stamp" />
+                <ScalarProperty Name="Modifier_ID" ColumnName="Modifier_ID" />
+                <ScalarProperty Name="Modifier_Date_Stamp" ColumnName="Modifier_Date_Stamp" />
+                <ScalarProperty Name="CRMS_Ref_Number" ColumnName="CRMS_Ref_Number" />
+                <ScalarProperty Name="Loan_Ref_Number" ColumnName="Loan_Ref_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRMS_300">
+            <EntityTypeMapping TypeName="CRMSModel.CRMS_300">
+              <MappingFragment StoreEntitySet="CRMS_300">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Customer_Account_Number" ColumnName="Customer_Account_Number" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Unique_Identifcation_Type" ColumnName="Unique_Identifcation_Type" />
+                <ScalarProperty Name="Unique_Identifcation_Number" ColumnName="Unique_Identifcation_Number" />
+                <ScalarProperty Name="Credit_Type" ColumnName="Credit_Type" />
+                <ScalarProperty Name="Credit_Purpose_By_Business_Lines" ColumnName="Credit_Purpose_By_Business_Lines" />
+                <ScalarProperty Name="Credit_Purpose_By_Business_Lines_Subsector" ColumnName="Credit_Purpose_By_Business_Lines_Subsector" />
+                <ScalarProperty Name="Credit_Limit" ColumnName="Credit_Limit" />
+                <ScalarProperty Name="Outstanding_Amount" ColumnName="Outstanding_Amount" />
+                <ScalarProperty Name="Fee_Type1" ColumnName="Fee_Type1" />
+                <ScalarProperty Name="Fee_Amount1" ColumnName="Fee_Amount1" />
+                <ScalarProperty Name="Fee_Type2" ColumnName="Fee_Type2" />
+                <ScalarProperty Name="Fee_Amount2" ColumnName="Fee_Amount2" />
+                <ScalarProperty Name="Fee_Type3" ColumnName="Fee_Type3" />
+                <ScalarProperty Name="Fee_Amount3" ColumnName="Fee_Amount3" />
+                <ScalarProperty Name="Fee_Type4" ColumnName="Fee_Type4" />
+                <ScalarProperty Name="Fee_Amount4" ColumnName="Fee_Amount4" />
+                <ScalarProperty Name="Fee_Type5" ColumnName="Fee_Type5" />
+                <ScalarProperty Name="Fee_Amount5" ColumnName="Fee_Amount5" />
+                <ScalarProperty Name="Fee_Type6" ColumnName="Fee_Type6" />
+                <ScalarProperty Name="Fee_Amount6" ColumnName="Fee_Amount6" />
+                <ScalarProperty Name="Fee_Type7" ColumnName="Fee_Type7" />
+                <ScalarProperty Name="Fee_Amount7" ColumnName="Fee_Amount7" />
+                <ScalarProperty Name="Fee_Type8" ColumnName="Fee_Type8" />
+                <ScalarProperty Name="Fee_Amount8" ColumnName="Fee_Amount8" />
+                <ScalarProperty Name="Fee_Type9" ColumnName="Fee_Type9" />
+                <ScalarProperty Name="Fee_Amount9" ColumnName="Fee_Amount9" />
+                <ScalarProperty Name="Fee_Type10" ColumnName="Fee_Type10" />
+                <ScalarProperty Name="Fee_Amount10" ColumnName="Fee_Amount10" />
+                <ScalarProperty Name="Fee_Type11" ColumnName="Fee_Type11" />
+                <ScalarProperty Name="Fee_Amount11" ColumnName="Fee_Amount11" />
+                <ScalarProperty Name="Fee_Type12" ColumnName="Fee_Type12" />
+                <ScalarProperty Name="Fee_Amount12" ColumnName="Fee_Amount12" />
+                <ScalarProperty Name="Fee_Type13" ColumnName="Fee_Type13" />
+                <ScalarProperty Name="Fee_Amount13" ColumnName="Fee_Amount13" />
+                <ScalarProperty Name="Fee_Type14" ColumnName="Fee_Type14" />
+                <ScalarProperty Name="Fee_Amount14" ColumnName="Fee_Amount14" />
+                <ScalarProperty Name="Fee_Type15" ColumnName="Fee_Type15" />
+                <ScalarProperty Name="Fee_Amount15" ColumnName="Fee_Amount15" />
+                <ScalarProperty Name="Fee_Type16" ColumnName="Fee_Type16" />
+                <ScalarProperty Name="Fee_Amount16" ColumnName="Fee_Amount16" />
+                <ScalarProperty Name="Effective_Date" ColumnName="Effective_Date" />
+                <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+                <ScalarProperty Name="Expiry_Date" ColumnName="Expiry_Date" />
+                <ScalarProperty Name="Repayment_Agreement_Mode" ColumnName="Repayment_Agreement_Mode" />
+                <ScalarProperty Name="Interest_Rate" ColumnName="Interest_Rate" />
+                <ScalarProperty Name="Beneficiary_Account_Number" ColumnName="Beneficiary_Account_Number" />
+                <ScalarProperty Name="Location_of_Beneficiary" ColumnName="Location_of_Beneficiary" />
+                <ScalarProperty Name="Relationship_Type" ColumnName="Relationship_Type" />
+                <ScalarProperty Name="Company_Size" ColumnName="Company_Size" />
+                <ScalarProperty Name="Funding_Source_Category" ColumnName="Funding_Source_Category" />
+                <ScalarProperty Name="ECCI_Number" ColumnName="ECCI_Number" />
+                <ScalarProperty Name="Funding_Source" ColumnName="Funding_Source" />
+                <ScalarProperty Name="Legal_Status" ColumnName="Legal_Status" />
+                <ScalarProperty Name="Classification_By_Business_Lines" ColumnName="Classification_By_Business_Lines" />
+                <ScalarProperty Name="Classification_By_Business_Lines_Subsector" ColumnName="Classification_By_Business_Lines_Subsector" />
+                <ScalarProperty Name="Specialised_Loan" ColumnName="Specialised_Loan" />
+                <ScalarProperty Name="Specialised_Loan_Period" ColumnName="Specialised_Loan_Period" />
+                <ScalarProperty Name="Director_Id_Type1" ColumnName="Director_Id_Type1" />
+                <ScalarProperty Name="Director_Id_Number1" ColumnName="Director_Id_Number1" />
+                <ScalarProperty Name="Director_Id_Email1" ColumnName="Director_Id_Email1" />
+                <ScalarProperty Name="Director_Id_Type2" ColumnName="Director_Id_Type2" />
+                <ScalarProperty Name="Director_Id_Number2" ColumnName="Director_Id_Number2" />
+                <ScalarProperty Name="Director_Id_Email2" ColumnName="Director_Id_Email2" />
+                <ScalarProperty Name="Director_Id_Type3" ColumnName="Director_Id_Type3" />
+                <ScalarProperty Name="Director_Id_Number3" ColumnName="Director_Id_Number3" />
+                <ScalarProperty Name="Director_Id_Email3" ColumnName="Director_Id_Email3" />
+                <ScalarProperty Name="Director_Id_Type4" ColumnName="Director_Id_Type4" />
+                <ScalarProperty Name="Director_Id_Number4" ColumnName="Director_Id_Number4" />
+                <ScalarProperty Name="Director_Id_Email4" ColumnName="Director_Id_Email4" />
+                <ScalarProperty Name="Director_Id_Type5" ColumnName="Director_Id_Type5" />
+                <ScalarProperty Name="Director_Id_Number5" ColumnName="Director_Id_Number5" />
+                <ScalarProperty Name="Director_Id_Email5" ColumnName="Director_Id_Email5" />
+                <ScalarProperty Name="Syndication" ColumnName="Syndication" />
+                <ScalarProperty Name="Syndication_Status" ColumnName="Syndication_Status" />
+                <ScalarProperty Name="Syndication_Reference_Number" ColumnName="Syndication_Reference_Number" />
+                <ScalarProperty Name="Collateral_Present1" ColumnName="Collateral_Present1" />
+                <ScalarProperty Name="Collateral_Secure1" ColumnName="Collateral_Secure1" />
+                <ScalarProperty Name="Security_Type1" ColumnName="Security_Type1" />
+                <ScalarProperty Name="Address_of_Security1" ColumnName="Address_of_Security1" />
+                <ScalarProperty Name="Owner_of_Security1" ColumnName="Owner_of_Security1" />
+                <ScalarProperty Name="Security_Id_Type1" ColumnName="Security_Id_Type1" />
+                <ScalarProperty Name="Security_Id_Number1" ColumnName="Security_Id_Number1" />
+                <ScalarProperty Name="Collateral_Secure2" ColumnName="Collateral_Secure2" />
+                <ScalarProperty Name="Security_Type2" ColumnName="Security_Type2" />
+                <ScalarProperty Name="Address_of_Security2" ColumnName="Address_of_Security2" />
+                <ScalarProperty Name="Owner_of_Security2" ColumnName="Owner_of_Security2" />
+                <ScalarProperty Name="Security_Id_Type2" ColumnName="Security_Id_Type2" />
+                <ScalarProperty Name="Security_Id_Number2" ColumnName="Security_Id_Number2" />
+                <ScalarProperty Name="Collateral_Secure3" ColumnName="Collateral_Secure3" />
+                <ScalarProperty Name="Security_Type3" ColumnName="Security_Type3" />
+                <ScalarProperty Name="Address_of_Security3" ColumnName="Address_of_Security3" />
+                <ScalarProperty Name="Owner_of_Security3" ColumnName="Owner_of_Security3" />
+                <ScalarProperty Name="Security_Id_Type3" ColumnName="Security_Id_Type3" />
+                <ScalarProperty Name="Security_Id_Number3" ColumnName="Security_Id_Number3" />
+                <ScalarProperty Name="Collateral_Secure4" ColumnName="Collateral_Secure4" />
+                <ScalarProperty Name="Security_Type4" ColumnName="Security_Type4" />
+                <ScalarProperty Name="Address_of_Security4" ColumnName="Address_of_Security4" />
+                <ScalarProperty Name="Owner_of_Security4" ColumnName="Owner_of_Security4" />
+                <ScalarProperty Name="Security_Id_Type4" ColumnName="Security_Id_Type4" />
+                <ScalarProperty Name="Security_Id_Number4" ColumnName="Security_Id_Number4" />
+                <ScalarProperty Name="Collateral_Secure5" ColumnName="Collateral_Secure5" />
+                <ScalarProperty Name="Security_Type5" ColumnName="Security_Type5" />
+                <ScalarProperty Name="Address_of_Security5" ColumnName="Address_of_Security5" />
+                <ScalarProperty Name="Owner_of_Security5" ColumnName="Owner_of_Security5" />
+                <ScalarProperty Name="Security_Id_Type5" ColumnName="Security_Id_Type5" />
+                <ScalarProperty Name="Security_Id_Number5" ColumnName="Security_Id_Number5" />
+                <ScalarProperty Name="Collateral_Secure6" ColumnName="Collateral_Secure6" />
+                <ScalarProperty Name="Security_Type6" ColumnName="Security_Type6" />
+                <ScalarProperty Name="Address_of_Security6" ColumnName="Address_of_Security6" />
+                <ScalarProperty Name="Owner_of_Security6" ColumnName="Owner_of_Security6" />
+                <ScalarProperty Name="Security_Id_Type6" ColumnName="Security_Id_Type6" />
+                <ScalarProperty Name="Security_Id_Number6" ColumnName="Security_Id_Number6" />
+                <ScalarProperty Name="Collateral_Secure7" ColumnName="Collateral_Secure7" />
+                <ScalarProperty Name="Security_Type7" ColumnName="Security_Type7" />
+                <ScalarProperty Name="Address_of_Security7" ColumnName="Address_of_Security7" />
+                <ScalarProperty Name="Owner_of_Security7" ColumnName="Owner_of_Security7" />
+                <ScalarProperty Name="Security_Id_Type7" ColumnName="Security_Id_Type7" />
+                <ScalarProperty Name="Security_Id_Number7" ColumnName="Security_Id_Number7" />
+                <ScalarProperty Name="Collateral_Secure8" ColumnName="Collateral_Secure8" />
+                <ScalarProperty Name="Security_Type8" ColumnName="Security_Type8" />
+                <ScalarProperty Name="Address_of_Security8" ColumnName="Address_of_Security8" />
+                <ScalarProperty Name="Owner_of_Security8" ColumnName="Owner_of_Security8" />
+                <ScalarProperty Name="Security_Id_Type8" ColumnName="Security_Id_Type8" />
+                <ScalarProperty Name="Security_Id_Number8" ColumnName="Security_Id_Number8" />
+                <ScalarProperty Name="Collateral_Secure9" ColumnName="Collateral_Secure9" />
+                <ScalarProperty Name="Security_Type9" ColumnName="Security_Type9" />
+                <ScalarProperty Name="Address_of_Security9" ColumnName="Address_of_Security9" />
+                <ScalarProperty Name="Owner_of_Security9" ColumnName="Owner_of_Security9" />
+                <ScalarProperty Name="Security_Id_Type9" ColumnName="Security_Id_Type9" />
+                <ScalarProperty Name="Security_Id_Number9" ColumnName="Security_Id_Number9" />
+                <ScalarProperty Name="Collateral_Secure10" ColumnName="Collateral_Secure10" />
+                <ScalarProperty Name="Security_Type10" ColumnName="Security_Type10" />
+                <ScalarProperty Name="Address_of_Security10" ColumnName="Address_of_Security10" />
+                <ScalarProperty Name="Owner_of_Security10" ColumnName="Owner_of_Security10" />
+                <ScalarProperty Name="Security_Id_Type10" ColumnName="Security_Id_Type10" />
+                <ScalarProperty Name="Security_Id_Number10" ColumnName="Security_Id_Number10" />
+                <ScalarProperty Name="Guarantee1" ColumnName="Guarantee1" />
+                <ScalarProperty Name="Guarantee_Type1" ColumnName="Guarantee_Type1" />
+                <ScalarProperty Name="Guarantor_Id_Type1" ColumnName="Guarantor_Id_Type1" />
+                <ScalarProperty Name="Guarantor_Id_Number1" ColumnName="Guarantor_Id_Number1" />
+                <ScalarProperty Name="Amount_Guaranteed1" ColumnName="Amount_Guaranteed1" />
+                <ScalarProperty Name="Guarantee_Type2" ColumnName="Guarantee_Type2" />
+                <ScalarProperty Name="Guarantor_Id_Type2" ColumnName="Guarantor_Id_Type2" />
+                <ScalarProperty Name="Guarantor_Id_Number2" ColumnName="Guarantor_Id_Number2" />
+                <ScalarProperty Name="Amount_Guaranteed2" ColumnName="Amount_Guaranteed2" />
+                <ScalarProperty Name="Guarantee_Type3" ColumnName="Guarantee_Type3" />
+                <ScalarProperty Name="Guarantor_Id_Type3" ColumnName="Guarantor_Id_Type3" />
+                <ScalarProperty Name="Guarantor_Id_Number3" ColumnName="Guarantor_Id_Number3" />
+                <ScalarProperty Name="Amount_Guaranteed3" ColumnName="Amount_Guaranteed3" />
+                <ScalarProperty Name="Guarantee_Type4" ColumnName="Guarantee_Type4" />
+                <ScalarProperty Name="Guarantor_Id_Type4" ColumnName="Guarantor_Id_Type4" />
+                <ScalarProperty Name="Guarantor_Id_Number4" ColumnName="Guarantor_Id_Number4" />
+                <ScalarProperty Name="Amount_Guaranteed4" ColumnName="Amount_Guaranteed4" />
+                <ScalarProperty Name="Guarantee_Type5" ColumnName="Guarantee_Type5" />
+                <ScalarProperty Name="Guarantor_Id_Type5" ColumnName="Guarantor_Id_Type5" />
+                <ScalarProperty Name="Guarantor_Id_Number5" ColumnName="Guarantor_Id_Number5" />
+                <ScalarProperty Name="Amount_Guaranteed5" ColumnName="Amount_Guaranteed5" />
+                <ScalarProperty Name="Inputter_ID" ColumnName="Inputter_ID" />
+                <ScalarProperty Name="Inputter_Date_Stamp" ColumnName="Inputter_Date_Stamp" />
+                <ScalarProperty Name="Modifier_ID" ColumnName="Modifier_ID" />
+                <ScalarProperty Name="Modifier_Date_Stamp" ColumnName="Modifier_Date_Stamp" />
+                <ScalarProperty Name="CRMS_Ref_Number" ColumnName="CRMS_Ref_Number" />
+                <ScalarProperty Name="Loan_Ref_Number" ColumnName="Loan_Ref_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRMS_400A">
+            <EntityTypeMapping TypeName="CRMSModel.CRMS_400A">
+              <MappingFragment StoreEntitySet="CRMS_400A">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Customer_Account_Number" ColumnName="Customer_Account_Number" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Unique_Identifcation_Type" ColumnName="Unique_Identifcation_Type" />
+                <ScalarProperty Name="Unique_Identifcation_Number" ColumnName="Unique_Identifcation_Number" />
+                <ScalarProperty Name="CRMS_Reference_Number" ColumnName="CRMS_Reference_Number" />
+                <ScalarProperty Name="Effective_Date" ColumnName="Effective_Date" />
+                <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+                <ScalarProperty Name="Expiry_Date" ColumnName="Expiry_Date" />
+                <ScalarProperty Name="Inputter_ID" ColumnName="Inputter_ID" />
+                <ScalarProperty Name="Inputter_Date_Stamp" ColumnName="Inputter_Date_Stamp" />
+                <ScalarProperty Name="Modifier_ID" ColumnName="Modifier_ID" />
+                <ScalarProperty Name="Modifier_Date_Stamp" ColumnName="Modifier_Date_Stamp" />
+                <ScalarProperty Name="CRMS_Ref_Number" ColumnName="CRMS_Ref_Number" />
+                <ScalarProperty Name="Loan_Ref_Number" ColumnName="Loan_Ref_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRMS_400B">
+            <EntityTypeMapping TypeName="CRMSModel.CRMS_400B">
+              <MappingFragment StoreEntitySet="CRMS_400B">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Customer_Account_Number" ColumnName="Customer_Account_Number" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Unique_Identifcation_Type" ColumnName="Unique_Identifcation_Type" />
+                <ScalarProperty Name="Unique_Identifcation_Number" ColumnName="Unique_Identifcation_Number" />
+                <ScalarProperty Name="CRMS_Reference_Number" ColumnName="CRMS_Reference_Number" />
+                <ScalarProperty Name="Credit_Type" ColumnName="Credit_Type" />
+                <ScalarProperty Name="Credit_Limit" ColumnName="Credit_Limit" />
+                <ScalarProperty Name="Outstanding_Amount" ColumnName="Outstanding_Amount" />
+                <ScalarProperty Name="Fee_Type1" ColumnName="Fee_Type1" />
+                <ScalarProperty Name="Fee_Amount1" ColumnName="Fee_Amount1" />
+                <ScalarProperty Name="Fee_Type2" ColumnName="Fee_Type2" />
+                <ScalarProperty Name="Fee_Amount2" ColumnName="Fee_Amount2" />
+                <ScalarProperty Name="Fee_Type3" ColumnName="Fee_Type3" />
+                <ScalarProperty Name="Fee_Amount3" ColumnName="Fee_Amount3" />
+                <ScalarProperty Name="Fee_Type4" ColumnName="Fee_Type4" />
+                <ScalarProperty Name="Fee_Amount4" ColumnName="Fee_Amount4" />
+                <ScalarProperty Name="Fee_Type5" ColumnName="Fee_Type5" />
+                <ScalarProperty Name="Fee_Amount5" ColumnName="Fee_Amount5" />
+                <ScalarProperty Name="Fee_Type6" ColumnName="Fee_Type6" />
+                <ScalarProperty Name="Fee_Amount6" ColumnName="Fee_Amount6" />
+                <ScalarProperty Name="Fee_Type7" ColumnName="Fee_Type7" />
+                <ScalarProperty Name="Fee_Amount7" ColumnName="Fee_Amount7" />
+                <ScalarProperty Name="Fee_Type8" ColumnName="Fee_Type8" />
+                <ScalarProperty Name="Fee_Amount8" ColumnName="Fee_Amount8" />
+                <ScalarProperty Name="Fee_Type9" ColumnName="Fee_Type9" />
+                <ScalarProperty Name="Fee_Amount9" ColumnName="Fee_Amount9" />
+                <ScalarProperty Name="Fee_Type10" ColumnName="Fee_Type10" />
+                <ScalarProperty Name="Fee_Amount10" ColumnName="Fee_Amount10" />
+                <ScalarProperty Name="Fee_Type11" ColumnName="Fee_Type11" />
+                <ScalarProperty Name="Fee_Amount11" ColumnName="Fee_Amount11" />
+                <ScalarProperty Name="Fee_Type12" ColumnName="Fee_Type12" />
+                <ScalarProperty Name="Fee_Amount12" ColumnName="Fee_Amount12" />
+                <ScalarProperty Name="Fee_Type13" ColumnName="Fee_Type13" />
+                <ScalarProperty Name="Fee_Amount13" ColumnName="Fee_Amount13" />
+                <ScalarProperty Name="Fee_Type14" ColumnName="Fee_Type14" />
+                <ScalarProperty Name="Fee_Amount14" ColumnName="Fee_Amount14" />
+                <ScalarProperty Name="Fee_Type15" ColumnName="Fee_Type15" />
+                <ScalarProperty Name="Fee_Amount15" ColumnName="Fee_Amount15" />
+                <ScalarProperty Name="Fee_Type16" ColumnName="Fee_Type16" />
+                <ScalarProperty Name="Fee_Amount16" ColumnName="Fee_Amount16" />
+                <ScalarProperty Name="Effective_Date" ColumnName="Effective_Date" />
+                <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+                <ScalarProperty Name="Expiry_Date" ColumnName="Expiry_Date" />
+                <ScalarProperty Name="Repayment_Agreement_Mode" ColumnName="Repayment_Agreement_Mode" />
+                <ScalarProperty Name="Performance_Repayment_Status" ColumnName="Performance_Repayment_Status" />
+                <ScalarProperty Name="Reason_For_Restructuring" ColumnName="Reason_For_Restructuring" />
+                <ScalarProperty Name="Interest_Rate" ColumnName="Interest_Rate" />
+                <ScalarProperty Name="Beneficiary_Account_Number" ColumnName="Beneficiary_Account_Number" />
+                <ScalarProperty Name="Location_of_Beneficiary" ColumnName="Location_of_Beneficiary" />
+                <ScalarProperty Name="Relationship_Type" ColumnName="Relationship_Type" />
+                <ScalarProperty Name="Funding_Source_Category" ColumnName="Funding_Source_Category" />
+                <ScalarProperty Name="ECCI_Number" ColumnName="ECCI_Number" />
+                <ScalarProperty Name="Funding_Source" ColumnName="Funding_Source" />
+                <ScalarProperty Name="Specialised_Loan" ColumnName="Specialised_Loan" />
+                <ScalarProperty Name="Specialised_Loan_Period" ColumnName="Specialised_Loan_Period" />
+                <ScalarProperty Name="Director_Id_Type1" ColumnName="Director_Id_Type1" />
+                <ScalarProperty Name="Director_Id_Number1" ColumnName="Director_Id_Number1" />
+                <ScalarProperty Name="Director_Id_Email1" ColumnName="Director_Id_Email1" />
+                <ScalarProperty Name="Director_Id_Type2" ColumnName="Director_Id_Type2" />
+                <ScalarProperty Name="Director_Id_Number2" ColumnName="Director_Id_Number2" />
+                <ScalarProperty Name="Director_Id_Email2" ColumnName="Director_Id_Email2" />
+                <ScalarProperty Name="Director_Id_Type3" ColumnName="Director_Id_Type3" />
+                <ScalarProperty Name="Director_Id_Number3" ColumnName="Director_Id_Number3" />
+                <ScalarProperty Name="Director_Id_Email3" ColumnName="Director_Id_Email3" />
+                <ScalarProperty Name="Director_Id_Type4" ColumnName="Director_Id_Type4" />
+                <ScalarProperty Name="Director_Id_Number4" ColumnName="Director_Id_Number4" />
+                <ScalarProperty Name="Director_Id_Email4" ColumnName="Director_Id_Email4" />
+                <ScalarProperty Name="Director_Id_Type5" ColumnName="Director_Id_Type5" />
+                <ScalarProperty Name="Director_Id_Number5" ColumnName="Director_Id_Number5" />
+                <ScalarProperty Name="Director_Id_Email5" ColumnName="Director_Id_Email5" />
+                <ScalarProperty Name="Collateral_Present1" ColumnName="Collateral_Present1" />
+                <ScalarProperty Name="Collateral_Secure1" ColumnName="Collateral_Secure1" />
+                <ScalarProperty Name="Security_Type1" ColumnName="Security_Type1" />
+                <ScalarProperty Name="Address_of_Security1" ColumnName="Address_of_Security1" />
+                <ScalarProperty Name="Owner_of_Security1" ColumnName="Owner_of_Security1" />
+                <ScalarProperty Name="Security_Id_Type1" ColumnName="Security_Id_Type1" />
+                <ScalarProperty Name="Security_Id_Number1" ColumnName="Security_Id_Number1" />
+                <ScalarProperty Name="Collateral_Secure2" ColumnName="Collateral_Secure2" />
+                <ScalarProperty Name="Security_Type2" ColumnName="Security_Type2" />
+                <ScalarProperty Name="Address_of_Security2" ColumnName="Address_of_Security2" />
+                <ScalarProperty Name="Owner_of_Security2" ColumnName="Owner_of_Security2" />
+                <ScalarProperty Name="Security_Id_Type2" ColumnName="Security_Id_Type2" />
+                <ScalarProperty Name="Security_Id_Number2" ColumnName="Security_Id_Number2" />
+                <ScalarProperty Name="Collateral_Secure3" ColumnName="Collateral_Secure3" />
+                <ScalarProperty Name="Security_Type3" ColumnName="Security_Type3" />
+                <ScalarProperty Name="Address_of_Security3" ColumnName="Address_of_Security3" />
+                <ScalarProperty Name="Owner_of_Security3" ColumnName="Owner_of_Security3" />
+                <ScalarProperty Name="Security_Id_Type3" ColumnName="Security_Id_Type3" />
+                <ScalarProperty Name="Security_Id_Number3" ColumnName="Security_Id_Number3" />
+                <ScalarProperty Name="Collateral_Secure4" ColumnName="Collateral_Secure4" />
+                <ScalarProperty Name="Security_Type4" ColumnName="Security_Type4" />
+                <ScalarProperty Name="Address_of_Security4" ColumnName="Address_of_Security4" />
+                <ScalarProperty Name="Owner_of_Security4" ColumnName="Owner_of_Security4" />
+                <ScalarProperty Name="Security_Id_Type4" ColumnName="Security_Id_Type4" />
+                <ScalarProperty Name="Security_Id_Number4" ColumnName="Security_Id_Number4" />
+                <ScalarProperty Name="Collateral_Secure5" ColumnName="Collateral_Secure5" />
+                <ScalarProperty Name="Security_Type5" ColumnName="Security_Type5" />
+                <ScalarProperty Name="Address_of_Security5" ColumnName="Address_of_Security5" />
+                <ScalarProperty Name="Owner_of_Security5" ColumnName="Owner_of_Security5" />
+                <ScalarProperty Name="Security_Id_Type5" ColumnName="Security_Id_Type5" />
+                <ScalarProperty Name="Security_Id_Number5" ColumnName="Security_Id_Number5" />
+                <ScalarProperty Name="Collateral_Secure6" ColumnName="Collateral_Secure6" />
+                <ScalarProperty Name="Security_Type6" ColumnName="Security_Type6" />
+                <ScalarProperty Name="Address_of_Security6" ColumnName="Address_of_Security6" />
+                <ScalarProperty Name="Owner_of_Security6" ColumnName="Owner_of_Security6" />
+                <ScalarProperty Name="Security_Id_Type6" ColumnName="Security_Id_Type6" />
+                <ScalarProperty Name="Security_Id_Number6" ColumnName="Security_Id_Number6" />
+                <ScalarProperty Name="Collateral_Secure7" ColumnName="Collateral_Secure7" />
+                <ScalarProperty Name="Security_Type7" ColumnName="Security_Type7" />
+                <ScalarProperty Name="Address_of_Security7" ColumnName="Address_of_Security7" />
+                <ScalarProperty Name="Owner_of_Security7" ColumnName="Owner_of_Security7" />
+                <ScalarProperty Name="Security_Id_Type7" ColumnName="Security_Id_Type7" />
+                <ScalarProperty Name="Security_Id_Number7" ColumnName="Security_Id_Number7" />
+                <ScalarProperty Name="Collateral_Secure8" ColumnName="Collateral_Secure8" />
+                <ScalarProperty Name="Security_Type8" ColumnName="Security_Type8" />
+                <ScalarProperty Name="Address_of_Security8" ColumnName="Address_of_Security8" />
+                <ScalarProperty Name="Owner_of_Security8" ColumnName="Owner_of_Security8" />
+                <ScalarProperty Name="Security_Id_Type8" ColumnName="Security_Id_Type8" />
+                <ScalarProperty Name="Security_Id_Number8" ColumnName="Security_Id_Number8" />
+                <ScalarProperty Name="Collateral_Secure9" ColumnName="Collateral_Secure9" />
+                <ScalarProperty Name="Security_Type9" ColumnName="Security_Type9" />
+                <ScalarProperty Name="Address_of_Security9" ColumnName="Address_of_Security9" />
+                <ScalarProperty Name="Owner_of_Security9" ColumnName="Owner_of_Security9" />
+                <ScalarProperty Name="Security_Id_Type9" ColumnName="Security_Id_Type9" />
+                <ScalarProperty Name="Security_Id_Number9" ColumnName="Security_Id_Number9" />
+                <ScalarProperty Name="Collateral_Secure10" ColumnName="Collateral_Secure10" />
+                <ScalarProperty Name="Security_Type10" ColumnName="Security_Type10" />
+                <ScalarProperty Name="Address_of_Security10" ColumnName="Address_of_Security10" />
+                <ScalarProperty Name="Owner_of_Security10" ColumnName="Owner_of_Security10" />
+                <ScalarProperty Name="Security_Id_Type10" ColumnName="Security_Id_Type10" />
+                <ScalarProperty Name="Security_Id_Number10" ColumnName="Security_Id_Number10" />
+                <ScalarProperty Name="Guarantee1" ColumnName="Guarantee1" />
+                <ScalarProperty Name="Guarantee_Type1" ColumnName="Guarantee_Type1" />
+                <ScalarProperty Name="Guarantor_Id_Type1" ColumnName="Guarantor_Id_Type1" />
+                <ScalarProperty Name="Guarantor_Id_Number1" ColumnName="Guarantor_Id_Number1" />
+                <ScalarProperty Name="Amount_Guaranteed1" ColumnName="Amount_Guaranteed1" />
+                <ScalarProperty Name="Guarantee_Type2" ColumnName="Guarantee_Type2" />
+                <ScalarProperty Name="Guarantor_Id_Type2" ColumnName="Guarantor_Id_Type2" />
+                <ScalarProperty Name="Guarantor_Id_Number2" ColumnName="Guarantor_Id_Number2" />
+                <ScalarProperty Name="Amount_Guaranteed2" ColumnName="Amount_Guaranteed2" />
+                <ScalarProperty Name="Guarantee_Type3" ColumnName="Guarantee_Type3" />
+                <ScalarProperty Name="Guarantor_Id_Type3" ColumnName="Guarantor_Id_Type3" />
+                <ScalarProperty Name="Guarantor_Id_Number3" ColumnName="Guarantor_Id_Number3" />
+                <ScalarProperty Name="Amount_Guaranteed3" ColumnName="Amount_Guaranteed3" />
+                <ScalarProperty Name="Guarantee_Type4" ColumnName="Guarantee_Type4" />
+                <ScalarProperty Name="Guarantor_Id_Type4" ColumnName="Guarantor_Id_Type4" />
+                <ScalarProperty Name="Guarantor_Id_Number4" ColumnName="Guarantor_Id_Number4" />
+                <ScalarProperty Name="Amount_Guaranteed4" ColumnName="Amount_Guaranteed4" />
+                <ScalarProperty Name="Guarantee_Type5" ColumnName="Guarantee_Type5" />
+                <ScalarProperty Name="Guarantor_Id_Type5" ColumnName="Guarantor_Id_Type5" />
+                <ScalarProperty Name="Guarantor_Id_Number5" ColumnName="Guarantor_Id_Number5" />
+                <ScalarProperty Name="Amount_Guaranteed5" ColumnName="Amount_Guaranteed5" />
+                <ScalarProperty Name="Inputter_ID" ColumnName="Inputter_ID" />
+                <ScalarProperty Name="Inputter_Date_Stamp" ColumnName="Inputter_Date_Stamp" />
+                <ScalarProperty Name="Modifier_ID" ColumnName="Modifier_ID" />
+                <ScalarProperty Name="Modifier_Date_Stamp" ColumnName="Modifier_Date_Stamp" />
+                <ScalarProperty Name="CRMS_Ref_Number" ColumnName="CRMS_Ref_Number" />
+                <ScalarProperty Name="Loan_Ref_Number" ColumnName="Loan_Ref_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRMS_600">
+            <EntityTypeMapping TypeName="CRMSModel.CRMS_600">
+              <MappingFragment StoreEntitySet="CRMS_600">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Customer_Account_Number" ColumnName="Customer_Account_Number" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Syndication_Reference_Number" ColumnName="Syndication_Reference_Number" />
+                <ScalarProperty Name="Syndication_Name" ColumnName="Syndication_Name" />
+                <ScalarProperty Name="Syndication_Total_Amount" ColumnName="Syndication_Total_Amount" />
+                <ScalarProperty Name="Participating_Bank_COde" ColumnName="Participating_Bank_COde" />
+                <ScalarProperty Name="Inputter_ID" ColumnName="Inputter_ID" />
+                <ScalarProperty Name="Inputter_Date_Stamp" ColumnName="Inputter_Date_Stamp" />
+                <ScalarProperty Name="Modifier_ID" ColumnName="Modifier_ID" />
+                <ScalarProperty Name="Modifier_Date_Stamp" ColumnName="Modifier_Date_Stamp" />
+                <ScalarProperty Name="CRMS_Ref_Number" ColumnName="CRMS_Ref_Number" />
+                <ScalarProperty Name="Loan_Ref_Number" ColumnName="Loan_Ref_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRMS_700">
+            <EntityTypeMapping TypeName="CRMSModel.CRMS_700">
+              <MappingFragment StoreEntitySet="CRMS_700">
+                <ScalarProperty Name="Loan_Ref_Number" ColumnName="Loan_Ref_Number" />
+                <ScalarProperty Name="CRMS_Ref_Number" ColumnName="CRMS_Ref_Number" />
+                <ScalarProperty Name="Modifier_Date_Stamp" ColumnName="Modifier_Date_Stamp" />
+                <ScalarProperty Name="Modifier_ID" ColumnName="Modifier_ID" />
+                <ScalarProperty Name="Inputter_Date_Stamp" ColumnName="Inputter_Date_Stamp" />
+                <ScalarProperty Name="Inputter_ID" ColumnName="Inputter_ID" />
+                <ScalarProperty Name="Amount_Guaranteed5" ColumnName="Amount_Guaranteed5" />
+                <ScalarProperty Name="Guarantor_Id_Number5" ColumnName="Guarantor_Id_Number5" />
+                <ScalarProperty Name="Guarantor_Id_Type5" ColumnName="Guarantor_Id_Type5" />
+                <ScalarProperty Name="Guarantee_Type5" ColumnName="Guarantee_Type5" />
+                <ScalarProperty Name="Amount_Guaranteed4" ColumnName="Amount_Guaranteed4" />
+                <ScalarProperty Name="Guarantor_Id_Number4" ColumnName="Guarantor_Id_Number4" />
+                <ScalarProperty Name="Guarantor_Id_Type4" ColumnName="Guarantor_Id_Type4" />
+                <ScalarProperty Name="Guarantee_Type4" ColumnName="Guarantee_Type4" />
+                <ScalarProperty Name="Amount_Guaranteed3" ColumnName="Amount_Guaranteed3" />
+                <ScalarProperty Name="Guarantor_Id_Number3" ColumnName="Guarantor_Id_Number3" />
+                <ScalarProperty Name="Guarantor_Id_Type3" ColumnName="Guarantor_Id_Type3" />
+                <ScalarProperty Name="Guarantee_Type3" ColumnName="Guarantee_Type3" />
+                <ScalarProperty Name="Amount_Guaranteed2" ColumnName="Amount_Guaranteed2" />
+                <ScalarProperty Name="Guarantor_Id_Number2" ColumnName="Guarantor_Id_Number2" />
+                <ScalarProperty Name="Guarantor_Id_Type2" ColumnName="Guarantor_Id_Type2" />
+                <ScalarProperty Name="Guarantee_Type2" ColumnName="Guarantee_Type2" />
+                <ScalarProperty Name="Amount_Guaranteed1" ColumnName="Amount_Guaranteed1" />
+                <ScalarProperty Name="Guarantor_Id_Number1" ColumnName="Guarantor_Id_Number1" />
+                <ScalarProperty Name="Guarantor_Id_Type1" ColumnName="Guarantor_Id_Type1" />
+                <ScalarProperty Name="Guarantee_Type1" ColumnName="Guarantee_Type1" />
+                <ScalarProperty Name="Guarantee1" ColumnName="Guarantee1" />
+                <ScalarProperty Name="Security_Id_Number10" ColumnName="Security_Id_Number10" />
+                <ScalarProperty Name="Security_Id_Type10" ColumnName="Security_Id_Type10" />
+                <ScalarProperty Name="Owner_of_Security10" ColumnName="Owner_of_Security10" />
+                <ScalarProperty Name="Address_of_Security10" ColumnName="Address_of_Security10" />
+                <ScalarProperty Name="Security_Type10" ColumnName="Security_Type10" />
+                <ScalarProperty Name="Collateral_Secure10" ColumnName="Collateral_Secure10" />
+                <ScalarProperty Name="Security_Id_Number9" ColumnName="Security_Id_Number9" />
+                <ScalarProperty Name="Security_Id_Type9" ColumnName="Security_Id_Type9" />
+                <ScalarProperty Name="Owner_of_Security9" ColumnName="Owner_of_Security9" />
+                <ScalarProperty Name="Address_of_Security9" ColumnName="Address_of_Security9" />
+                <ScalarProperty Name="Security_Type9" ColumnName="Security_Type9" />
+                <ScalarProperty Name="Collateral_Secure9" ColumnName="Collateral_Secure9" />
+                <ScalarProperty Name="Security_Id_Number8" ColumnName="Security_Id_Number8" />
+                <ScalarProperty Name="Security_Id_Type8" ColumnName="Security_Id_Type8" />
+                <ScalarProperty Name="Owner_of_Security8" ColumnName="Owner_of_Security8" />
+                <ScalarProperty Name="Address_of_Security8" ColumnName="Address_of_Security8" />
+                <ScalarProperty Name="Security_Type8" ColumnName="Security_Type8" />
+                <ScalarProperty Name="Collateral_Secure8" ColumnName="Collateral_Secure8" />
+                <ScalarProperty Name="Security_Id_Number7" ColumnName="Security_Id_Number7" />
+                <ScalarProperty Name="Security_Id_Type7" ColumnName="Security_Id_Type7" />
+                <ScalarProperty Name="Owner_of_Security7" ColumnName="Owner_of_Security7" />
+                <ScalarProperty Name="Address_of_Security7" ColumnName="Address_of_Security7" />
+                <ScalarProperty Name="Security_Type7" ColumnName="Security_Type7" />
+                <ScalarProperty Name="Collateral_Secure7" ColumnName="Collateral_Secure7" />
+                <ScalarProperty Name="Security_Id_Number6" ColumnName="Security_Id_Number6" />
+                <ScalarProperty Name="Security_Id_Type6" ColumnName="Security_Id_Type6" />
+                <ScalarProperty Name="Owner_of_Security6" ColumnName="Owner_of_Security6" />
+                <ScalarProperty Name="Address_of_Security6" ColumnName="Address_of_Security6" />
+                <ScalarProperty Name="Security_Type6" ColumnName="Security_Type6" />
+                <ScalarProperty Name="Collateral_Secure6" ColumnName="Collateral_Secure6" />
+                <ScalarProperty Name="Security_Id_Number5" ColumnName="Security_Id_Number5" />
+                <ScalarProperty Name="Security_Id_Type5" ColumnName="Security_Id_Type5" />
+                <ScalarProperty Name="Owner_of_Security5" ColumnName="Owner_of_Security5" />
+                <ScalarProperty Name="Address_of_Security5" ColumnName="Address_of_Security5" />
+                <ScalarProperty Name="Security_Type5" ColumnName="Security_Type5" />
+                <ScalarProperty Name="Collateral_Secure5" ColumnName="Collateral_Secure5" />
+                <ScalarProperty Name="Security_Id_Number4" ColumnName="Security_Id_Number4" />
+                <ScalarProperty Name="Security_Id_Type4" ColumnName="Security_Id_Type4" />
+                <ScalarProperty Name="Owner_of_Security4" ColumnName="Owner_of_Security4" />
+                <ScalarProperty Name="Address_of_Security4" ColumnName="Address_of_Security4" />
+                <ScalarProperty Name="Security_Type4" ColumnName="Security_Type4" />
+                <ScalarProperty Name="Collateral_Secure4" ColumnName="Collateral_Secure4" />
+                <ScalarProperty Name="Security_Id_Number3" ColumnName="Security_Id_Number3" />
+                <ScalarProperty Name="Security_Id_Type3" ColumnName="Security_Id_Type3" />
+                <ScalarProperty Name="Owner_of_Security3" ColumnName="Owner_of_Security3" />
+                <ScalarProperty Name="Address_of_Security3" ColumnName="Address_of_Security3" />
+                <ScalarProperty Name="Security_Type3" ColumnName="Security_Type3" />
+                <ScalarProperty Name="Collateral_Secure3" ColumnName="Collateral_Secure3" />
+                <ScalarProperty Name="Security_Id_Number2" ColumnName="Security_Id_Number2" />
+                <ScalarProperty Name="Security_Id_Type2" ColumnName="Security_Id_Type2" />
+                <ScalarProperty Name="Owner_of_Security2" ColumnName="Owner_of_Security2" />
+                <ScalarProperty Name="Address_of_Security2" ColumnName="Address_of_Security2" />
+                <ScalarProperty Name="Security_Type2" ColumnName="Security_Type2" />
+                <ScalarProperty Name="Collateral_Secure2" ColumnName="Collateral_Secure2" />
+                <ScalarProperty Name="Security_Id_Number1" ColumnName="Security_Id_Number1" />
+                <ScalarProperty Name="Security_Id_Type1" ColumnName="Security_Id_Type1" />
+                <ScalarProperty Name="Owner_of_Security1" ColumnName="Owner_of_Security1" />
+                <ScalarProperty Name="Address_of_Security1" ColumnName="Address_of_Security1" />
+                <ScalarProperty Name="Security_Type1" ColumnName="Security_Type1" />
+                <ScalarProperty Name="Collateral_Secure1" ColumnName="Collateral_Secure1" />
+                <ScalarProperty Name="Collateral_Present1" ColumnName="Collateral_Present1" />
+                <ScalarProperty Name="Syndication_Reference_Number" ColumnName="Syndication_Reference_Number" />
+                <ScalarProperty Name="Syndication_Total_Amount" ColumnName="Syndication_Total_Amount" />
+                <ScalarProperty Name="Syndication_Name" ColumnName="Syndication_Name" />
+                <ScalarProperty Name="Syndication_Status" ColumnName="Syndication_Status" />
+                <ScalarProperty Name="Syndication" ColumnName="Syndication" />
+                <ScalarProperty Name="Director_Id_Email5" ColumnName="Director_Id_Email5" />
+                <ScalarProperty Name="Director_Id_Number5" ColumnName="Director_Id_Number5" />
+                <ScalarProperty Name="Director_Id_Type5" ColumnName="Director_Id_Type5" />
+                <ScalarProperty Name="Director_Id_Email4" ColumnName="Director_Id_Email4" />
+                <ScalarProperty Name="Director_Id_Number4" ColumnName="Director_Id_Number4" />
+                <ScalarProperty Name="Director_Id_Type4" ColumnName="Director_Id_Type4" />
+                <ScalarProperty Name="Director_Id_Email3" ColumnName="Director_Id_Email3" />
+                <ScalarProperty Name="Director_Id_Number3" ColumnName="Director_Id_Number3" />
+                <ScalarProperty Name="Director_Id_Type3" ColumnName="Director_Id_Type3" />
+                <ScalarProperty Name="Director_Id_Email2" ColumnName="Director_Id_Email2" />
+                <ScalarProperty Name="Director_Id_Number2" ColumnName="Director_Id_Number2" />
+                <ScalarProperty Name="Director_Id_Type2" ColumnName="Director_Id_Type2" />
+                <ScalarProperty Name="Director_Id_Email1" ColumnName="Director_Id_Email1" />
+                <ScalarProperty Name="Director_Id_Number1" ColumnName="Director_Id_Number1" />
+                <ScalarProperty Name="Director_Id_Type1" ColumnName="Director_Id_Type1" />
+                <ScalarProperty Name="Specialised_Loan_Period" ColumnName="Specialised_Loan_Period" />
+                <ScalarProperty Name="Specialised_Loan" ColumnName="Specialised_Loan" />
+                <ScalarProperty Name="Classification_By_Business_Lines_Subsector" ColumnName="Classification_By_Business_Lines_Subsector" />
+                <ScalarProperty Name="Classification_By_Business_Lines" ColumnName="Classification_By_Business_Lines" />
+                <ScalarProperty Name="Legal_Status" ColumnName="Legal_Status" />
+                <ScalarProperty Name="Funding_Source" ColumnName="Funding_Source" />
+                <ScalarProperty Name="ECCI_Number" ColumnName="ECCI_Number" />
+                <ScalarProperty Name="Funding_Source_Category" ColumnName="Funding_Source_Category" />
+                <ScalarProperty Name="Company_Size" ColumnName="Company_Size" />
+                <ScalarProperty Name="Relationship_Type" ColumnName="Relationship_Type" />
+                <ScalarProperty Name="Location_of_Beneficiary" ColumnName="Location_of_Beneficiary" />
+                <ScalarProperty Name="Beneficiary_Account_Number" ColumnName="Beneficiary_Account_Number" />
+                <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+                <ScalarProperty Name="Fee_Amount16" ColumnName="Fee_Amount16" />
+                <ScalarProperty Name="Fee_Type16" ColumnName="Fee_Type16" />
+                <ScalarProperty Name="Fee_Amount15" ColumnName="Fee_Amount15" />
+                <ScalarProperty Name="Fee_Type15" ColumnName="Fee_Type15" />
+                <ScalarProperty Name="Fee_Amount14" ColumnName="Fee_Amount14" />
+                <ScalarProperty Name="Fee_Type14" ColumnName="Fee_Type14" />
+                <ScalarProperty Name="Fee_Amount13" ColumnName="Fee_Amount13" />
+                <ScalarProperty Name="Fee_Type13" ColumnName="Fee_Type13" />
+                <ScalarProperty Name="Fee_Amount12" ColumnName="Fee_Amount12" />
+                <ScalarProperty Name="Fee_Type12" ColumnName="Fee_Type12" />
+                <ScalarProperty Name="Fee_Amount11" ColumnName="Fee_Amount11" />
+                <ScalarProperty Name="Fee_Type11" ColumnName="Fee_Type11" />
+                <ScalarProperty Name="Fee_Amount10" ColumnName="Fee_Amount10" />
+                <ScalarProperty Name="Fee_Type10" ColumnName="Fee_Type10" />
+                <ScalarProperty Name="Fee_Amount9" ColumnName="Fee_Amount9" />
+                <ScalarProperty Name="Fee_Type9" ColumnName="Fee_Type9" />
+                <ScalarProperty Name="Fee_Amount8" ColumnName="Fee_Amount8" />
+                <ScalarProperty Name="Fee_Type8" ColumnName="Fee_Type8" />
+                <ScalarProperty Name="Fee_Amount7" ColumnName="Fee_Amount7" />
+                <ScalarProperty Name="Fee_Type7" ColumnName="Fee_Type7" />
+                <ScalarProperty Name="Fee_Amount6" ColumnName="Fee_Amount6" />
+                <ScalarProperty Name="Fee_Type6" ColumnName="Fee_Type6" />
+                <ScalarProperty Name="Fee_Amount5" ColumnName="Fee_Amount5" />
+                <ScalarProperty Name="Fee_Type5" ColumnName="Fee_Type5" />
+                <ScalarProperty Name="Fee_Amount4" ColumnName="Fee_Amount4" />
+                <ScalarProperty Name="Fee_Type4" ColumnName="Fee_Type4" />
+                <ScalarProperty Name="Fee_Amount3" ColumnName="Fee_Amount3" />
+                <ScalarProperty Name="Fee_Type3" ColumnName="Fee_Type3" />
+                <ScalarProperty Name="Fee_Amount2" ColumnName="Fee_Amount2" />
+                <ScalarProperty Name="Fee_Type2" ColumnName="Fee_Type2" />
+                <ScalarProperty Name="Fee_Amount1" ColumnName="Fee_Amount1" />
+                <ScalarProperty Name="Fee_Type1" ColumnName="Fee_Type1" />
+                <ScalarProperty Name="Credit_Purpose_By_Business_Lines_Subsector" ColumnName="Credit_Purpose_By_Business_Lines_Subsector" />
+                <ScalarProperty Name="Credit_Purpose_By_Business_Lines" ColumnName="Credit_Purpose_By_Business_Lines" />
+                <ScalarProperty Name="CRMS_Reference_Number" ColumnName="CRMS_Reference_Number" />
+                <ScalarProperty Name="Unique_Identifcation_Number" ColumnName="Unique_Identifcation_Number" />
+                <ScalarProperty Name="Unique_Identifcation_Type" ColumnName="Unique_Identifcation_Type" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Customer_Account_Number" ColumnName="Customer_Account_Number" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

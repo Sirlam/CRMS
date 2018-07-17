@@ -1,0 +1,1170 @@
+﻿@using CRMS.Utils
+@using WebGrease.Css
+@{
+    ViewBag.Title = "CRMS 100";
+    List<CrmsData> GovtCodes = ViewBag.GovtCodes;
+    List<CrmsData> LegalStatus = ViewBag.LegalStatus;
+    List<CrmsData> CreditType = ViewBag.CreditType;
+    List<CrmsData> BusinessLines = ViewBag.BusinessLines;
+    List<CrmsData> BusinessLinesSubsector = ViewBag.BusinessLinesSubsector;
+    List<CrmsData> FeeType = ViewBag.FeeType;
+    List<CrmsData> RepaymentAgreement = ViewBag.RepaymentAgreement;
+    List<CrmsData> SecurityType = ViewBag.SecurityType;
+    List<CrmsData> RepaymentSource = ViewBag.RepaymentSource;
+
+    var saveCrms100 = ViewBag.saveCrms100;
+}
+@if (saveCrms100 == true)
+{
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Data saved successfully</strong>
+    </div>
+}
+else if (saveCrms100 == false)
+{
+    <div class="alert alert-danger alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Error Saving, Try again later</strong>...
+    </div>
+}
+
+<div class="row">
+    <div class="col-sm-7">
+        <h4>PURPOSE</h4>
+        <h4>CRMS 100 - Submissions for Federal Govt, State Govts, Local Govts and FCT</h4>
+        <p class="text-danger">Note: Data Inputted should be valid and accurate. Kindly Re-confirm before saving.</p>
+        <br />
+    </div>
+</div>
+
+<div class="row">
+    <br />
+    <!--First CRMS 100 Div-->
+    <div class="isCRMS_100 col-sm-12 general">
+        <h3>Submissions for Federal Govt, State Govts, Local Govts and FCT</h3>
+        <p><span class="text-danger">*</span> fields are required</p>
+        <br />
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal", @id = "formCRMS100" }))
+        {
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Code:</label>
+                    <input type="text" class="form-control" value="CRMS 100" readonly="readonly" name="code" id="code" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Customer ID <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Customer ID" maxlength="8" required="required" name="CustomerID" id="CustomerID" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Customer Account Number <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Customer Account Number" maxlength="10" required="required" name="AccountNumber" id="AccountNumber" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Customer Name <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Click to fetch account name</span>
+                    <input type="text" class="form-control" placeholder="Enter Customer Name" required="required" readonly="readonly" name="CustomerName" id="CustomerName" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Government Code <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="GovtCode">
+                        @if (GovtCodes != null)
+                        {
+                            foreach (var govtCode in GovtCodes)
+                            {
+                                <option value="@govtCode.GovernmentCode">@govtCode.GovernmentState</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Legal Status <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="LegalStatus">
+                        <option value="40008">Government</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Credit Type <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="CreditType">
+                        @if (CreditType != null)
+                        {
+                            foreach (var creditType in CreditType)
+                            {
+                                <option value="@creditType.CreditTypeCode">@creditType.CreditType</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Credit Purpose By Businesslines <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="BusinessLines" id="BusinessLines">
+                        @if (BusinessLines != null)
+                        {
+                            foreach (var businessLines in BusinessLines)
+                            {
+                                <option value="@businessLines.BusinessLinesCode" name="@businessLines.BusinessLinesCode">@businessLines.BusinessLines</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Credit Purpose By Businesslines Sub Sector <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="BusinessLinesSubsector" id="BusinessLinesSubsector">
+                        @if (BusinessLinesSubsector != null)
+                        {
+                            foreach (var businessLinesSubsector in BusinessLinesSubsector)
+                            {
+                                <option value="@businessLinesSubsector.BusinessLinesSubsectorCode" name="@businessLinesSubsector.AssociatedBusinessLine">@businessLinesSubsector.BusinessLinesSubsector</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Credit Limit (NGN) <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                    <input type="text" placeholder="Enter Credit Limit" class="form-control" maxlength="21" required="required" name="CreditLimit" id="CreditLimit" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Outstanding Amount (NGN) <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                    <input type="text" placeholder="Enter Outstounding Amount" class="form-control" maxlength="21" required="required" name="OutstandingAmount" id="OutstandingAmount" />
+                </div>
+            </div>
+
+            <div class="form-group general">
+                <label class="text-primary">FEES</label>
+                <div class="col-sm-4">
+                    <label>Fee Type <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="FeeType1">
+                        @if (FeeType != null)
+                        {
+                            foreach (var feeType in FeeType)
+                            {
+                                <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                            }
+                        }
+                    </select>
+                    <button type="button" class='btn btn-success' id='addFeeCRMS100' value="Add Fee">Add more</button>
+                    <button type="button" class='btn btn-danger' id='removeFeeCRMS100' value="Remove Fee">Remove all</button>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Fee Amount (NGN) <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                    <input type="text" placeholder="Enter Fee Amount" class="form-control" maxlength="21" required="required" name="FeeAmount1" id="FeeAmount1" />
+                </div>
+            </div>
+
+            <!--Fees-->
+            <div id="feeCRMS100" class="general">
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType2">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount2" id="FeeAmount2" />
+                    </div>
+                </div>
+                <hr/>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType3">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount3" id="FeeAmount3" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType4">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount4" id="FeeAmount4" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType5">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount5" id="FeeAmount5" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType6">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount6" id="FeeAmount6" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType7">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount7" id="FeeAmount7" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType8">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                            <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount8" id="FeeAmount8" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType9">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount9" id="FeeAmount9" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType10">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount10" id="FeeAmount10" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType11">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount11" id="FeeAmount11" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType12">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount12" id="FeeAmount12" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType13">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount13" id="FeeAmount13" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType14">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount14" id="FeeAmount14" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType15">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                                    <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount15" id="FeeAmount15" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Fee Type:</label>
+                        <select class="form-control" name="FeeType16">
+                            <option selected="selected" value="">--Select Other Fee Type--</option>
+                            @if (FeeType != null)
+                            {
+                                foreach (var feeType in FeeType)
+                                {
+                            <option value="@feeType.FeeTypeCode">@feeType.FeeTypeCode - @feeType.FeeType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Fee Amount (NGN):</label>
+                        <span class="help-block">Comma separated allowed e.g 100,000.50</span>
+                        <input type="text" value="0" class="form-control" maxlength="21" name="FeeAmount16" id="FeeAmount16" />
+                    </div>
+                </div>
+            </div>
+            <!--Fees-->
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Effective Date <span class="text-danger">*</span> :</label>
+                    <span class="help-block">click textfield to use datepicker</span>
+                    <input type="text" placeholder="DD/MM/YYYY" class="form-control jqueryui-datepicker" data-position="bottom left" data-language="en" required="required" name="EffectiveDate" id="EffectiveDate100" readonly="readonly" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Expiry Date <span class="text-danger">*</span> :</label>
+                    <span class="help-block">click textfield to use datepicker</span>
+                    <input type="text" placeholder="DD/MM/YYYY" class="form-control jqueryui-datepicker" data-position="bottom left" data-language="en" required="required" name="ExpiryDate" id="ExpiryDate100" readonly="readonly" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Tenor <span class="text-danger">*</span> :</label>
+                    <span class="help-block">(in months) click field to auto calculate</span>
+                    <input type="text" placeholder="Enter Tenor" class="form-control" maxlength="3" readonly="readonly" required="required" name="Tenor" id="Tenor100" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Repayment Agreement_Mode <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="RepaymentAgreement">
+                        @if (RepaymentAgreement != null)
+                        {
+                            foreach (var repaymentAgreement in RepaymentAgreement)
+                            {
+                                <option value="@repaymentAgreement.RepaymentAgreementCode">@repaymentAgreement.RepaymentAgreementMode</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Specialised Loan <span class="text-danger">*</span> :</label>
+                    <span class="help-block">Does loan have moratorium period?</span>
+                    <select class="form-control" name="SpecialisedLoan" id="SpecialisedLoan">
+                        <option value="YES">YES</option>
+                        <option value="NO">NO</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Specialised Loan Period:</label>
+                    <span class="help-block">State moratorium period in months</span>
+                    <input type="text" value="0" class="form-control" maxlength="2" name="SpecialisedLoanPeriod" id="SpecialisedLoanPeriod" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Interest Rate <span class="text-danger">*</span> :</label>
+                    <input type="text" placeholder="Enter Interest Rate" class="form-control" maxlength="5" required="required" name="InterestRate" id="InterestRate" />
+                </div>
+            </div>
+            
+            <div class="form-group general">
+                <label class="text-primary">COLLATERAL</label>
+                <div class="col-sm-4">
+                    <label>Collateral Present <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="CollateralPresent1" id="CollateralPresent1">
+                        <option value="YES">YES</option>
+                        <option value="NO">No</option>
+                    </select>
+                    <button type="button" class='btn btn-success' id='addCollateralCRMS100' value="Add Collateral">Add more</button>
+                    <button type="button" class='btn btn-danger' id='removeCollateralCRMS100' value="Remove Collateral">Remove all</button>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Collateral Secure:</label>
+                    <select class="form-control" name="CollateralSecure1" id="CollateralSecure1">
+                        <option value="" selected="selected">--Select Collateral Security--</option>
+                        <option value="YES">YES</option>
+                        <option value="NO">No</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Security Type:</label>
+                    <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                    <select class="form-control" name="SecurityType1">
+                        <option selected="selected" value="">--Select Security Type--</option>
+                        @if (SecurityType != null)
+                        {
+                            foreach (var securityType in SecurityType)
+                            {
+                                <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                            }
+                        }
+                    </select>    
+                </div>
+            </div>
+            
+            <!--Collateral-->
+            <div id="collateralCRMS100" class="general">
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure2" id="CollateralSecure2">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType2">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <hr/>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure3" id="CollateralSecure3">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType3">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure4" id="CollateralSecure4">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType4">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure5" id="CollateralSecure5">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType5">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure6" id="CollateralSecure6">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType6">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure7" id="CollateralSecure7">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType7">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure8" id="CollateralSecure8">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType8">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure9" id="CollateralSecure9">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType9">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <hr />
+                
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>Collateral Secure:</label>
+                        <select class="form-control" name="CollateralSecure10" id="CollateralSecure10">
+                            <option value="" selected="selected">--Select Collateral Security--</option>
+                            <option value="YES">YES</option>
+                            <option value="NO">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label>Security Type:</label>
+                        <span class="help-block">SEC - for secured type; UNSEC - for unsecured type</span>
+                        <select class="form-control" name="SecurityType10">
+                            <option selected="selected" value="">--Select Security Type--</option>
+                            @if (SecurityType != null)
+                            {
+                                foreach (var securityType in SecurityType)
+                                {
+                                    <option value="@securityType.SecurityCode">@securityType.SecurityCode | @securityType.SecurityType</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+               
+            </div>
+            <!--Collateral-->
+
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Syndication <span class="text-danger">*</span> :</label>
+                    <select class="form-control" name="Syndication" id="Syndication">
+                        <option value="YES">YES</option>
+                        <option value="NO">NO</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Syndication Status:</label>
+                    <select class="form-control" name="SyndicationStatus">
+                        <option value="LEAD">LEAD</option>
+                        <option value="MEMBER">MEMBER</option>
+                        <option value="NIL">NIL</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Syndication Reference Number:</label>
+                    <input type="text" class="form-control" placeholder="Enter Syndication Refernce Number" name="SyndicationReferenceNumber" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label>Repayment Source <span class="text-danger">*</span> :</label>
+                    @if (RepaymentSource != null)
+                    {
+                        foreach (var repaymentSource in RepaymentSource)
+                        {
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-inline">
+                                    <label><input type="checkbox" value="@repaymentSource.RepaymentSourceCode" id="@repaymentSource.RepaymentSourceCode" name="RepaymentSource">@repaymentSource.RepaymentSource</label>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+            <button type="reset" class="btn btn-danger btn-lg">Reset</button>
+        }
+    </div>
+    <!--First CRMS 100 Div-->
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/account-details.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.datepicker-here').datepicker({
+                dateFormat: "dd/mm/yyyy",
+                minDate: new Date()
+            });
+        });
+
+        $(document).ready(function() {
+            $("#feeCRMS100").hide();
+
+            $("#addFeeCRMS100").click(function() {
+                $("#feeCRMS100").show();
+            });
+
+            $("#removeFeeCRMS100").click(function() {
+                $("#feeCRMS100").hide();
+                $("#feeCRMS100").find('input:text').val('0');
+                //$("#feeCRMS100").hide();
+                $("#feeCRMS100 select option").prop('selected', function() {
+                    return this.defaultSelected;
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            $("#collateralCRMS100").hide();
+
+            $("#addCollateralCRMS100").click(function () {
+                $("#collateralCRMS100").show();
+            });
+
+            $("#removeCollateralCRMS100").click(function () {
+                $("#collateralCRMS100").hide();
+                //$("#feeCRMS100").hide();
+                $("#collateralCRMS100 select option").prop('selected', function () {
+                    return this.defaultSelected;
+                });
+            });
+        });
+
+        $(document).ready(function() {
+            $('#formCRMS100').validate({
+                rules: {
+                    CustomerID: {
+                        required: true,
+                        number: true,
+                        minlength: 8
+                    },
+                    AccountNumber: {
+                        required: true,
+                        number: true,
+                        minlength: 10
+                    },
+                    CreditLimit: {
+                        required: true,
+                        number: true
+                    },
+                    OutstandingAmount: {
+                        required: true,
+                        number: true
+                    },
+                    FeeAmount1: {
+                        required: true,
+                        number: true
+                    },
+                    FeeAmount2: {
+                        number: true
+                    },
+                    FeeAmount3: {
+                        number: true
+                    },
+                    FeeAmount4: {
+                        number: true
+                    },
+                    FeeAmount5: {
+                        number: true
+                    },
+                    FeeAmount6: {
+                        number: true
+                    },
+                    FeeAmount7: {
+                        number: true
+                    },
+                    FeeAmount8: {
+                        number: true
+                    },
+                    FeeAmount9: {
+                        number: true
+                    },
+                    FeeAmount10: {
+                        number: true
+                    },
+                    FeeAmount11: {
+                        number: true
+                    },
+                    FeeAmount12: {
+                        number: true
+                    },
+                    FeeAmount13: {
+                        number: true
+                    },
+                    FeeAmount14: {
+                        number: true
+                    },
+                    FeeAmount15: {
+                        number: true
+                    },
+                    FeeAmount16: {
+                        number: true
+                    },
+                    InterestRate: {
+                        required: true,
+                        number: true
+                    },
+                    RepaymentSource: {
+                        required: true,
+                        minlength: 1
+                    },
+                    SpecialisedLoanPeriod: {
+                        required: function(element) {
+                            return $("#SpecialisedLoan").val() != "NO";
+                        }
+                    },
+                    SecurityType: {
+                        required: function(element) {
+                            return $("#CollateralPresent").val() != "NO";
+                        }
+                    },
+                    SyndicationReferenceNumber: {
+                        required: function(element) {
+                            return $("#Syndication").val() != "NO";
+                        }
+                    },
+                    CollateralSecure1: {
+                        required: function (element) {
+                            return $("#CollateralPresent1").val() != "NO";
+                        }
+                    },
+                    SecurityType1: {
+                        required: function (element) {
+                            return $("#CollateralSecure1").val() != "";
+                        }
+                    },
+                    SecurityType2: {
+                        required: function (element) {
+                            return $("#CollateralSecure2").val() != "";
+                        }
+                    },
+                    SecurityType3: {
+                        required: function (element) {
+                            return $("#CollateralSecure3").val() != "";
+                        }
+                    },
+                    SecurityType4: {
+                        required: function (element) {
+                            return $("#CollateralSecure4").val() != "";
+                        }
+                    },
+                    SecurityType5: {
+                        required: function (element) {
+                            return $("#CollateralSecure5").val() != "";
+                        }
+                    },
+                    SecurityType6: {
+                        required: function (element) {
+                            return $("#CollateralSecure6").val() != "";
+                        }
+                    },
+                    SecurityType7: {
+                        required: function (element) {
+                            return $("#CollateralSecure7").val() != "";
+                        }
+                    },
+                    SecurityType8: {
+                        required: function (element) {
+                            return $("#CollateralSecure8").val() != "";
+                        }
+                    },
+                    SecurityType9: {
+                        required: function (element) {
+                            return $("#CollateralSecure9").val() != "";
+                        }
+                    },
+                    SecurityType10: {
+                        required: function (element) {
+                            return $("#CollateralSecure10").val() != "";
+                        }
+                    }
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            $('#AccountNumber').on('blur', function() {
+                var AccountNumber = $('#AccountNumber').val();
+                var AccountName = accountFunction(AccountNumber);
+
+                $('#CustomerName').val(AccountName.toString());
+                if (AccountName == '') {
+                    alert('Wrong Account Number, Kindly reconfirm');
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            $('#Tenor100').on('change paste mousedown', function() {
+                var a = $('#EffectiveDate100').val();
+                var b = $('#ExpiryDate100').val();
+                var c = $('#Tenor100');
+
+                var tempA = a.split('/');
+                var tempB = b.split('/');
+
+                var date1 = new Date(tempA[1] + '/' + tempA[0] + '/' + tempA[2]);
+                var date2 = new Date(tempB[1] + '/' + tempB[0] + '/' + tempB[2]);
+                var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+                var diffDays = Math.round(timeDiff / (1000 * 3600 * 24) / 30);
+
+                c.val(diffDays);
+                //alert(a);
+                //alert(b);
+                console.log(diffDays);
+            });
+        });
+
+        $(document).ready(function() {
+            $('#BusinessLines').change(function() {
+                if ($(this).data('options') == undefined) {
+                    /*Taking an array of all options-2 and kind of embedding it on the select1*/
+                    $(this).data('options', $('#BusinessLinesSubsector option').clone());
+                }
+                var id = $(this).val();
+                var options = $(this).data('options').filter('[name=' + id + ']');
+                $('#BusinessLinesSubsector').html(options);
+            });
+        });
+
+        /*$(document).ready(function() {
+
+             $.fn.digits = function() {
+                return this.each(function() {
+                    $(this).val($(this).val().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+                });
+            };
+
+            $('#OutstandingAmount').keyup(function() {
+                $('#OutstandingAmount').digits();
+            });
+
+            $('#OutstandingAmount').keyup(function (event) {
+
+                // skip for arrow keys
+                if (event.which >= 37 && event.which <= 40) return;
+
+                // format number
+                $(this).val(function (index, value) {
+                    return value
+                    .replace(/\D/g, "")
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                    ;
+                });
+            });
+
+            for (var i = 1; i < 16; i++) {
+                $('#FeeAmount' + i).digits();
+            }
+        });*/
+
+    </script>
+}

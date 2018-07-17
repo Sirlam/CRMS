@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CRMS_100">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Customer_Name" Type="text" Nullable="false" />
+    <Property Name="Government_Code" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Legal_Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Type" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Purpose_By_Business_Lines" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Purpose_By_Business_Lines_Subsector" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Limit" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Outstanding_Amount" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Fee_Type1" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Fee_Amount1" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Fee_Type2" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount2" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type3" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount3" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type4" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount4" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type5" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount5" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type6" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount6" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type7" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount7" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type8" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount8" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type9" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount9" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type10" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount10" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type11" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount11" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type12" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount12" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type13" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount13" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type14" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount14" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type15" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount15" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type16" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount16" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Effective_Date" Type="date" Nullable="false" />
+    <Property Name="Tenor" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="Expiry_Date" Type="date" Nullable="false" />
+    <Property Name="Repayment_Agreement_Mode" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Specialised_Loan" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Specialised_Loan_Period" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="Interest_Rate" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Collateral_Present1" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Collateral_Secure1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type1" Type="text" />
+    <Property Name="Collateral_Secure2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type2" Type="text" />
+    <Property Name="Collateral_Secure3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type3" Type="text" />
+    <Property Name="Collateral_Secure4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type4" Type="text" />
+    <Property Name="Collateral_Secure5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type5" Type="text" />
+    <Property Name="Collateral_Secure6" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type6" Type="text" />
+    <Property Name="Collateral_Secure7" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type7" Type="text" />
+    <Property Name="Collateral_Secure8" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type8" Type="text" />
+    <Property Name="Collateral_Secure9" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type9" Type="text" />
+    <Property Name="Collateral_Secure10" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type10" Type="text" />
+    <Property Name="Repayment_Source" Type="text" Nullable="false" />
+    <Property Name="Syndication" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Syndication_Status" Type="nvarchar" MaxLength="6" />
+    <Property Name="Syndication_Reference_Number" Type="text" />
+    <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inputter_Date_Stamp" Type="datetime" />
+    <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Modifier_Date_Stamp" Type="datetime" />
+    <Property Name="CRMS_Ref_Number" Type="text" />
+    <Property Name="Loan_Ref_Number" Type="text" />
+  </EntityType>
+  <EntityType Name="CRMS_200">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Customer_Name" Type="text" Nullable="false" />
+    <Property Name="Government_Mda_Tin" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Legal_Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Type" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Purpose_By_Business_Lines" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Purpose_By_Business_Lines_Subsector" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Limit" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Outstanding_Amount" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Fee_Type1" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Fee_Amount1" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Fee_Type2" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount2" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type3" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount3" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type4" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount4" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type5" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount5" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type6" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount6" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type7" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount7" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type8" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount8" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type9" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount9" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type10" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount10" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type11" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount11" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type12" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount12" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type13" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount13" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type14" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount14" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type15" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount15" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type16" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount16" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Effective_Date" Type="date" Nullable="false" />
+    <Property Name="Tenor" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="Expiry_Date" Type="date" Nullable="false" />
+    <Property Name="Repayment_Agreement_Mode" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Performance_Repayment_Status" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Interest_Rate" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Specialised_Loan" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Specialised_Loan_Period" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="Collateral_Present1" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Collateral_Secure1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type1" Type="text" />
+    <Property Name="Collateral_Secure2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type2" Type="text" />
+    <Property Name="Collateral_Secure3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type3" Type="text" />
+    <Property Name="Collateral_Secure4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type4" Type="text" />
+    <Property Name="Collateral_Secure5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type5" Type="text" />
+    <Property Name="Collateral_Secure6" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type6" Type="text" />
+    <Property Name="Collateral_Secure7" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type7" Type="text" />
+    <Property Name="Collateral_Secure8" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type8" Type="text" />
+    <Property Name="Collateral_Secure9" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type9" Type="text" />
+    <Property Name="Collateral_Secure10" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type10" Type="text" />
+    <Property Name="Repayment_Source" Type="text" Nullable="false" />
+    <Property Name="Syndication" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Syndication_Status" Type="nvarchar" MaxLength="6" />
+    <Property Name="Syndication_Reference_Number" Type="text" />
+    <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inputter_Date_Stamp" Type="datetime" />
+    <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Modifier_Date_Stamp" Type="datetime" />
+    <Property Name="CRMS_Ref_Number" Type="text" />
+    <Property Name="Loan_Ref_Number" Type="text" />
+  </EntityType>
+  <EntityType Name="CRMS_300">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Customer_Name" Type="text" Nullable="false" />
+    <Property Name="Unique_Identifcation_Type" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Unique_Identifcation_Number" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Credit_Type" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Purpose_By_Business_Lines" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Purpose_By_Business_Lines_Subsector" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Limit" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Outstanding_Amount" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Fee_Type1" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Fee_Amount1" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Fee_Type2" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount2" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type3" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount3" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type4" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount4" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type5" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount5" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type6" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount6" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type7" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount7" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type8" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount8" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type9" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount9" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type10" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount10" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type11" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount11" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type12" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount12" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type13" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount13" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type14" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount14" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type15" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount15" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type16" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount16" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Effective_Date" Type="date" Nullable="false" />
+    <Property Name="Tenor" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="Expiry_Date" Type="date" Nullable="false" />
+    <Property Name="Repayment_Agreement_Mode" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Interest_Rate" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Beneficiary_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Location_of_Beneficiary" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Relationship_Type" Type="text" Nullable="false" />
+    <Property Name="Company_Size" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Funding_Source_Category" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="ECCI_Number" Type="nvarchar" MaxLength="20" />
+    <Property Name="Funding_Source" Type="text" Nullable="false" />
+    <Property Name="Legal_Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Classification_By_Business_Lines" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Classification_By_Business_Lines_Subsector" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Specialised_Loan" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Specialised_Loan_Period" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="Director_Id_Type1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number1" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email1" Type="text" />
+    <Property Name="Director_Id_Type2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number2" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email2" Type="text" />
+    <Property Name="Director_Id_Type3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number3" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email3" Type="text" />
+    <Property Name="Director_Id_Type4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number4" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email4" Type="text" />
+    <Property Name="Director_Id_Type5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number5" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email5" Type="text" />
+    <Property Name="Syndication" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Syndication_Status" Type="nvarchar" MaxLength="6" />
+    <Property Name="Syndication_Reference_Number" Type="text" />
+    <Property Name="Collateral_Present1" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Collateral_Secure1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type1" Type="text" />
+    <Property Name="Address_of_Security1" Type="text" />
+    <Property Name="Owner_of_Security1" Type="text" />
+    <Property Name="Security_Id_Type1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number1" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type2" Type="text" />
+    <Property Name="Address_of_Security2" Type="text" />
+    <Property Name="Owner_of_Security2" Type="text" />
+    <Property Name="Security_Id_Type2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number2" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type3" Type="text" />
+    <Property Name="Address_of_Security3" Type="text" />
+    <Property Name="Owner_of_Security3" Type="text" />
+    <Property Name="Security_Id_Type3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number3" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type4" Type="text" />
+    <Property Name="Address_of_Security4" Type="text" />
+    <Property Name="Owner_of_Security4" Type="text" />
+    <Property Name="Security_Id_Type4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number4" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type5" Type="text" />
+    <Property Name="Address_of_Security5" Type="text" />
+    <Property Name="Owner_of_Security5" Type="text" />
+    <Property Name="Security_Id_Type5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number5" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure6" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type6" Type="text" />
+    <Property Name="Address_of_Security6" Type="text" />
+    <Property Name="Owner_of_Security6" Type="text" />
+    <Property Name="Security_Id_Type6" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number6" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure7" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type7" Type="text" />
+    <Property Name="Address_of_Security7" Type="text" />
+    <Property Name="Owner_of_Security7" Type="text" />
+    <Property Name="Security_Id_Type7" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number7" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure8" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type8" Type="text" />
+    <Property Name="Address_of_Security8" Type="text" />
+    <Property Name="Owner_of_Security8" Type="text" />
+    <Property Name="Security_Id_Type8" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number8" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure9" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type9" Type="text" />
+    <Property Name="Address_of_Security9" Type="text" />
+    <Property Name="Owner_of_Security9" Type="text" />
+    <Property Name="Security_Id_Type9" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number9" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure10" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type10" Type="text" />
+    <Property Name="Address_of_Security10" Type="text" />
+    <Property Name="Owner_of_Security10" Type="text" />
+    <Property Name="Security_Id_Type10" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number10" Type="nvarchar" MaxLength="15" />
+    <Property Name="Guarantee1" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Guarantee_Type1" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number1" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed1" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Guarantee_Type2" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number2" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed2" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Guarantee_Type3" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number3" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed3" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Guarantee_Type4" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number4" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed4" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Guarantee_Type5" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number5" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed5" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inputter_Date_Stamp" Type="datetime" />
+    <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Modifier_Date_Stamp" Type="datetime" />
+    <Property Name="CRMS_Ref_Number" Type="text" />
+    <Property Name="Loan_Ref_Number" Type="text" />
+  </EntityType>
+  <EntityType Name="CRMS_400A">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Customer_Name" Type="text" Nullable="false" />
+    <Property Name="Unique_Identifcation_Type" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="Unique_Identifcation_Number" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="CRMS_Reference_Number" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Effective_Date" Type="date" Nullable="false" />
+    <Property Name="Tenor" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="Expiry_Date" Type="date" Nullable="false" />
+    <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inputter_Date_Stamp" Type="datetime" />
+    <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Modifier_Date_Stamp" Type="datetime" />
+    <Property Name="CRMS_Ref_Number" Type="text" />
+    <Property Name="Loan_Ref_Number" Type="text" />
+  </EntityType>
+  <EntityType Name="CRMS_400B">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Customer_Name" Type="text" Nullable="false" />
+    <Property Name="Unique_Identifcation_Type" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="Unique_Identifcation_Number" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="CRMS_Reference_Number" Type="text" Nullable="false" />
+    <Property Name="Credit_Type" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Limit" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Outstanding_Amount" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Fee_Type1" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Fee_Amount1" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Fee_Type2" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount2" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type3" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount3" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type4" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount4" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type5" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount5" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type6" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount6" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type7" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount7" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type8" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount8" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type9" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount9" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type10" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount10" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type11" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount11" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type12" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount12" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type13" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount13" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type14" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount14" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type15" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount15" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type16" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount16" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Effective_Date" Type="date" Nullable="false" />
+    <Property Name="Tenor" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="Expiry_Date" Type="date" Nullable="false" />
+    <Property Name="Repayment_Agreement_Mode" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Performance_Repayment_Status" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Reason_For_Restructuring" Type="text" Nullable="false" />
+    <Property Name="Interest_Rate" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Beneficiary_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Location_of_Beneficiary" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Relationship_Type" Type="text" Nullable="false" />
+    <Property Name="Funding_Source_Category" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="ECCI_Number" Type="nvarchar" MaxLength="20" />
+    <Property Name="Funding_Source" Type="text" Nullable="false" />
+    <Property Name="Specialised_Loan" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Specialised_Loan_Period" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="Director_Id_Type1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number1" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email1" Type="text" />
+    <Property Name="Director_Id_Type2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number2" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email2" Type="text" />
+    <Property Name="Director_Id_Type3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number3" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email3" Type="text" />
+    <Property Name="Director_Id_Type4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number4" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email4" Type="text" />
+    <Property Name="Director_Id_Type5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number5" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email5" Type="text" />
+    <Property Name="Collateral_Present1" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Collateral_Secure1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type1" Type="text" />
+    <Property Name="Address_of_Security1" Type="text" />
+    <Property Name="Owner_of_Security1" Type="text" />
+    <Property Name="Security_Id_Type1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number1" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type2" Type="text" />
+    <Property Name="Address_of_Security2" Type="text" />
+    <Property Name="Owner_of_Security2" Type="text" />
+    <Property Name="Security_Id_Type2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number2" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type3" Type="text" />
+    <Property Name="Address_of_Security3" Type="text" />
+    <Property Name="Owner_of_Security3" Type="text" />
+    <Property Name="Security_Id_Type3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number3" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type4" Type="text" />
+    <Property Name="Address_of_Security4" Type="text" />
+    <Property Name="Owner_of_Security4" Type="text" />
+    <Property Name="Security_Id_Type4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number4" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type5" Type="text" />
+    <Property Name="Address_of_Security5" Type="text" />
+    <Property Name="Owner_of_Security5" Type="text" />
+    <Property Name="Security_Id_Type5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number5" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure6" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type6" Type="text" />
+    <Property Name="Address_of_Security6" Type="text" />
+    <Property Name="Owner_of_Security6" Type="text" />
+    <Property Name="Security_Id_Type6" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number6" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure7" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type7" Type="text" />
+    <Property Name="Address_of_Security7" Type="text" />
+    <Property Name="Owner_of_Security7" Type="text" />
+    <Property Name="Security_Id_Type7" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number7" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure8" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type8" Type="text" />
+    <Property Name="Address_of_Security8" Type="text" />
+    <Property Name="Owner_of_Security8" Type="text" />
+    <Property Name="Security_Id_Type8" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number8" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure9" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type9" Type="text" />
+    <Property Name="Address_of_Security9" Type="text" />
+    <Property Name="Owner_of_Security9" Type="text" />
+    <Property Name="Security_Id_Type9" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number9" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure10" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type10" Type="text" />
+    <Property Name="Address_of_Security10" Type="text" />
+    <Property Name="Owner_of_Security10" Type="text" />
+    <Property Name="Security_Id_Type10" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number10" Type="nvarchar" MaxLength="15" />
+    <Property Name="Guarantee1" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Guarantee_Type1" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number1" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed1" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Guarantee_Type2" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number2" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed2" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Guarantee_Type3" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number3" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed3" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Guarantee_Type4" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number4" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed4" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Guarantee_Type5" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number5" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed5" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inputter_Date_Stamp" Type="datetime" />
+    <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Modifier_Date_Stamp" Type="datetime" />
+    <Property Name="CRMS_Ref_Number" Type="text" />
+    <Property Name="Loan_Ref_Number" Type="text" />
+  </EntityType>
+  <EntityType Name="CRMS_600">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Customer_Name" Type="text" Nullable="false" />
+    <Property Name="Syndication_Reference_Number" Type="text" />
+    <Property Name="Syndication_Name" Type="text" Nullable="false" />
+    <Property Name="Syndication_Total_Amount" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Participating_Bank_COde" Type="text" Nullable="false" />
+    <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inputter_Date_Stamp" Type="datetime" />
+    <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Modifier_Date_Stamp" Type="datetime" />
+    <Property Name="CRMS_Ref_Number" Type="text" />
+    <Property Name="Loan_Ref_Number" Type="text" />
+  </EntityType>
+  <EntityType Name="CRMS_700">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="Customer_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Customer_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Customer_Name" Type="text" Nullable="false" />
+    <Property Name="Unique_Identifcation_Type" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Unique_Identifcation_Number" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="CRMS_Reference_Number" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Credit_Purpose_By_Business_Lines" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Credit_Purpose_By_Business_Lines_Subsector" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Fee_Type1" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Fee_Amount1" Type="decimal" Precision="32" Scale="2" Nullable="false" />
+    <Property Name="Fee_Type2" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount2" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type3" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount3" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type4" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount4" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type5" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount5" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type6" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount6" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type7" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount7" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type8" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount8" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type9" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount9" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type10" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount10" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type11" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount11" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type12" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount12" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type13" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount13" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type14" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount14" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type15" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount15" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Fee_Type16" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee_Amount16" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Tenor" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="Beneficiary_Account_Number" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Location_of_Beneficiary" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Relationship_Type" Type="text" Nullable="false" />
+    <Property Name="Company_Size" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Funding_Source_Category" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="ECCI_Number" Type="nvarchar" MaxLength="20" />
+    <Property Name="Funding_Source" Type="text" Nullable="false" />
+    <Property Name="Legal_Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Classification_By_Business_Lines" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Classification_By_Business_Lines_Subsector" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Specialised_Loan" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Specialised_Loan_Period" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="Director_Id_Type1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number1" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email1" Type="text" />
+    <Property Name="Director_Id_Type2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number2" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email2" Type="text" />
+    <Property Name="Director_Id_Type3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number3" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email3" Type="text" />
+    <Property Name="Director_Id_Type4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number4" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email4" Type="text" />
+    <Property Name="Director_Id_Type5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Director_Id_Number5" Type="nvarchar" MaxLength="15" />
+    <Property Name="Director_Id_Email5" Type="text" />
+    <Property Name="Syndication" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Syndication_Status" Type="nvarchar" MaxLength="6" />
+    <Property Name="Syndication_Name" Type="text" />
+    <Property Name="Syndication_Total_Amount" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Syndication_Reference_Number" Type="text" />
+    <Property Name="Collateral_Present1" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Collateral_Secure1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type1" Type="text" />
+    <Property Name="Address_of_Security1" Type="text" />
+    <Property Name="Owner_of_Security1" Type="text" />
+    <Property Name="Security_Id_Type1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number1" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type2" Type="text" />
+    <Property Name="Address_of_Security2" Type="text" />
+    <Property Name="Owner_of_Security2" Type="text" />
+    <Property Name="Security_Id_Type2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number2" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type3" Type="text" />
+    <Property Name="Address_of_Security3" Type="text" />
+    <Property Name="Owner_of_Security3" Type="text" />
+    <Property Name="Security_Id_Type3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number3" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type4" Type="text" />
+    <Property Name="Address_of_Security4" Type="text" />
+    <Property Name="Owner_of_Security4" Type="text" />
+    <Property Name="Security_Id_Type4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number4" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type5" Type="text" />
+    <Property Name="Address_of_Security5" Type="text" />
+    <Property Name="Owner_of_Security5" Type="text" />
+    <Property Name="Security_Id_Type5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number5" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure6" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type6" Type="text" />
+    <Property Name="Address_of_Security6" Type="text" />
+    <Property Name="Owner_of_Security6" Type="text" />
+    <Property Name="Security_Id_Type6" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number6" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure7" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type7" Type="text" />
+    <Property Name="Address_of_Security7" Type="text" />
+    <Property Name="Owner_of_Security7" Type="text" />
+    <Property Name="Security_Id_Type7" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number7" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure8" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type8" Type="text" />
+    <Property Name="Address_of_Security8" Type="text" />
+    <Property Name="Owner_of_Security8" Type="text" />
+    <Property Name="Security_Id_Type8" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number8" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure9" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type9" Type="text" />
+    <Property Name="Address_of_Security9" Type="text" />
+    <Property Name="Owner_of_Security9" Type="text" />
+    <Property Name="Security_Id_Type9" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number9" Type="nvarchar" MaxLength="15" />
+    <Property Name="Collateral_Secure10" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Type10" Type="text" />
+    <Property Name="Address_of_Security10" Type="text" />
+    <Property Name="Owner_of_Security10" Type="text" />
+    <Property Name="Security_Id_Type10" Type="nvarchar" MaxLength="3" />
+    <Property Name="Security_Id_Number10" Type="nvarchar" MaxLength="15" />
+    <Property Name="Guarantee1" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Guarantee_Type1" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type1" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number1" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed1" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Guarantee_Type2" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type2" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number2" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed2" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Guarantee_Type3" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type3" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number3" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed3" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Guarantee_Type4" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type4" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number4" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed4" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Guarantee_Type5" Type="nvarchar" MaxLength="20" />
+    <Property Name="Guarantor_Id_Type5" Type="nvarchar" MaxLength="3" />
+    <Property Name="Guarantor_Id_Number5" Type="nvarchar" MaxLength="15" />
+    <Property Name="Amount_Guaranteed5" Type="decimal" Precision="32" Scale="2" />
+    <Property Name="Inputter_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Inputter_Date_Stamp" Type="datetime" />
+    <Property Name="Modifier_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Modifier_Date_Stamp" Type="datetime" />
+    <Property Name="CRMS_Ref_Number" Type="text" />
+    <Property Name="Loan_Ref_Number" Type="text" />
+  </EntityType>
+  <EntityContainer Name="CRMSModelStoreContainer">
+    <EntitySet Name="CRMS_100" EntityType="Self.CRMS_100" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CRMS_200" EntityType="Self.CRMS_200" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CRMS_300" EntityType="Self.CRMS_300" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CRMS_400A" EntityType="Self.CRMS_400A" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CRMS_400B" EntityType="Self.CRMS_400B" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CRMS_600" EntityType="Self.CRMS_600" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CRMS_700" EntityType="Self.CRMS_700" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

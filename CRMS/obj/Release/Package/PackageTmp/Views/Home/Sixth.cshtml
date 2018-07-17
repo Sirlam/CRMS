@@ -1,0 +1,145 @@
+﻿@{
+    ViewBag.Title = "title";
+}
+
+<div class="row">
+    <div class="col-sm-7">
+        <h4>PURPOSE</h4>
+        <h4>CRMS 400C - Update Outstanding Balance & Liquidation of Existing Facility</h4>
+        <br />
+    </div>
+
+    <div class="col-sm-5">
+        <form role="form" action="#">
+            <label for="search">SEARCH</label>
+            <input class="form-control" id="search" name="search" placeholder="Enter Customer's Account Number" required="required">
+            <br />
+            <button type="submit" class="btn btn-warning"><i class="fa fa-search"></i> Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <br />
+    <!--Seventh CRMS 400C Div-->
+    <div class="isCRMS_400C col-sm-12 general">
+        <h3>Update Outstanding Balance & Liquidation of Existing Facility</h3>
+        <p><span class="text-danger">*</span> fields are required</p>
+        <br />
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Code:</label>
+                    <input type="text" class="form-control" value="CRMS 400C" readonly="readonly" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Customer ID <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Customer ID" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Customer Account Number <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Customer Account Number" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Unique Identification Type <span class="text-danger">*</span> :</label>
+                    <select class="form-control">
+                        <option>BVN</option>
+                        <option>TIN</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Unique Identification No <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter Unique Identification No" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>CRMS Reference No <span class="text-danger">*</span> :</label>
+                    <input type="text" class="form-control" placeholder="Enter CRMS Reference No" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Outstanding Amount <span class="text-danger">*</span> :</label>
+                    <input type="number" placeholder="Enter Outstounding Amount" class="form-control" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Performance Repayment Status <span class="text-danger">*</span> :</label>
+                    <select class="form-control">
+                        <option>100 - Monthly repayment of loan principal and/or loan interest made according to arrangements.</option>
+                        <option>101 - More than one and up to three monthly repayments of loan principal and/or loan interest remain unpaid.</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Total Bank Induced Debit Bank Charges <span class="text-danger">*</span> :</label>
+                    <input type="number" placeholder="Enter Total Bank Induced Debit Bank Charges" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Total Bank Induced Credit WriteOff <span class="text-danger">*</span> :</label>
+                    <input type="number" placeholder="Enter Total Bank Induced Credit WriteOff" class="form-control" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Total Bank Induced Credit Drawdown <span class="text-danger">*</span> :</label>
+                    <input type="number" placeholder="Enter Total Bank Induced Credit Drawdown" class="form-control" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Total Customer Induced Credit <span class="text-danger">*</span> :</label>
+                    <input type="number" placeholder="Enter Total Customer Induced Credit" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Total Customer Induced Credit Trn Type <span class="text-danger">*</span> :</label>
+                    <select class="form-control">
+                        <option>CHQ</option>
+                        <option>CASH</option>
+                        <option>TRN</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Total Customer Induced Debit Amt<span class="text-danger">*</span> :</label>
+                    <input type="number" placeholder="Enter Total Customer Induced Debit Amt" class="form-control" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Total Customer Induced Debit Trn Type <span class="text-danger">*</span> :</label>
+                    <select class="form-control">
+                        <option>CHQ</option>
+                        <option>CASH</option>
+                        <option>TRN</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label>Liquidation <span class="text-danger">*</span> :</label>
+                    <select class="form-control">
+                        <option>YES</option>
+                        <option>NO</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+        </form>
+    </div>
+    <!--Seventh CRMS 400C Div-->
+</div>
